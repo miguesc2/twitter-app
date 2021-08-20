@@ -1,0 +1,126 @@
+.register__container {
+    display: flex;
+}
+
+.register__container--imgs {
+    position: relative;
+    width: 43%;
+    height: 745px;
+}
+
+.register__contain--background {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.register__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 896px;
+    max-height: 745px;
+}
+
+.register__svg {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 67%;
+    height: 100%;
+}
+
+/* PRINCIPAL SECTION */
+
+.register__container--main {
+    width: 57%;
+    margin: 30px 0 0 30px;
+}
+
+.register__container--main h1 {
+    font-size: 4.4em;
+    margin-right: 160px;
+    margin-top: 60px;
+}
+
+.register__container--main h2 {
+    font-size: 2em;
+}
+
+
+.register__main--svg {
+    width: 45px;
+}
+
+.register__container_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.register__container_main div:nth-child(4) {
+    border: none; 
+    margin-bottom: 0;  
+}
+
+.register__container_main div:nth-child(5) {
+    border: none;   
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.register__main--icons {
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(207, 217, 222);
+    border-radius: 50px;
+    width: 50%;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    margin-bottom: 22px;
+}
+
+.register__main--icons span {
+    margin-left: 10px;
+}
+
+.register__main__icons--links small {
+    color: gray;
+    font-weight: normal;
+}
+
+.register__main__icons--links p {
+    font-weight: normal;
+    font-size: .9em;
+}
+
+.register__main__icons--links a {
+    color: rgb(27, 149, 224);
+    text-decoration: none;
+}
+
+.register__main_icon--svg {
+    width: 7%;
+}
+
+/* Footer */
+
+.register__container_list--footer {
+    list-style: none;
+    color: rgb(83, 100, 113);
+    text-align: center;
+}
+
+.register__container_list--footer li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.register__container_list--footer li a {
+    color: inherit;
+    text-decoration: none;
+}

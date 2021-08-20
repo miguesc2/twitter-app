@@ -1,0 +1,135 @@
+.login__container {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.login__container_main {
+    width: 44%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 34px;
+}
+
+.login__contain--bird {
+    text-align: center;
+}
+
+.login__main--svg {
+    margin-top: 10px;
+    width: 33px;
+    text-align: center;
+}
+
+/* Inputs */
+
+.login__contain_texts {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.login__contain_texts h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.login__contain_input {
+    margin-top: 25px;
+    /* padding: 20px 12px; */
+    /* border: 3px solid rgb(0, 174, 255); */
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    color: gray;
+}
+
+.login__contain_input:focus{
+    display: none;
+}
+
+.login__contain_input input, .login__contain_input input:focus {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    width: 80%;
+    margin-left: 10px;
+    padding: 5px 0 20px 0;
+}
+
+.login__contain_input span {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.login__contain_input--telephone {
+    padding: 15px 0 0px 0;
+}
+
+/* ancla */
+.login__contain_ancla {
+    margin-top: 40px;
+}
+
+.login__contain_ancla a {
+    color: rgb(27, 149, 224);
+    text-decoration: none;
+}
+
+/* birthday */
+.login__contain_birthday h2 {
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 40px;
+}
+
+.login__contain_birthday p{
+    color: gray;
+    margin-top: 5px;
+    font-size: .9em;
+}
+
+/* DropDowns */
+.login__contain_dropdown {
+    display: flex;
+    justify-content: space-around;
+}
+
+.login__dropdown_item {
+}
+
+.login__dropdown_item select {
+    padding: 15px 0 20px 0;
+    height: 100%;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    color: gray;
+    background-color: white;
+    outline: none;
+}
+
+.login__dropdown_item-one select {
+    width: 100%;
+}
+.login__dropdown_item-two select {
+    width: 80%;
+}
+.login__dropdown_item-three select {
+    width: 50%;
+}
+
+/* Button Next */
+.login__contain_nextbutton input {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 50px;
+    padding: 15px 0;
+    background-color: rgba(29, 161, 242, .4);
+    margin-bottom: 40px;
+    margin-top: 75px;
+}
