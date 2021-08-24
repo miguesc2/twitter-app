@@ -1,0 +1,51 @@
+.container__main {
+    display: flex;
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.container__main_left {
+    width: 23.2%;
+    border: 1px solid red;
+}
+
+.container__main_center {
+    width: 44%;
+    border: 1px solid blue;
+}
+
+.container__main_right {
+    width: 32.8%;
+    border: 1px solid black;
+}
+
+
+/* LEFT */
+.login__main_home--svg {
+    width: 30px;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+.login__main_home--icons {
+    width: 26px;
+    margin-left: 20px;
+    filter: brightness(0);
+}
+
+.home__list p {
+    display: flex;
+    align-items: center;
+}
+
+.home__lists ul {
+    padding: 0;
+}
+
+.home__list p li {
+    list-style: none;
+}
+
+/* CENTER */
+
+/* RIGHT */

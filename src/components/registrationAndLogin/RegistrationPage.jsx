@@ -49,7 +49,7 @@ function RegistrationPage() {
           </div>
 
           <div className="register__main--icons">
-            <Link to="loginpage">
+            <Link to="signup">
               <span>Sign up with phone number or email</span>
             </Link>
           </div>
