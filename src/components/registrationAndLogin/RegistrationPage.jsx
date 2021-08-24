@@ -49,8 +49,18 @@ function RegistrationPage() {
           </div>
 
           <div className="register__main--icons">
-            <Link to="signup">
+            <Link to="/signup">
               <span>Sign up with phone number or email</span>
+            </Link>
+          </div>
+          <div className="register__main--icons">
+            <Link to="/login">
+              <span>Login</span>
+            </Link>
+          </div>
+          <div className="register__main--icons">
+            <Link to="/home">
+              <span>Home</span>
             </Link>
           </div>
 
