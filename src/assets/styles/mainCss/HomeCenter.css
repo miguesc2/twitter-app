@@ -1,0 +1,87 @@
+.Home__center_header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 1px;
+    padding-left: 1em;
+}
+
+.Home__center_header h1 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+/* star */
+.Home__center_header svg {
+    padding-right: .5em;
+}
+
+/* whatprofile section */
+.Home__center_whatprofile {
+    display: flex;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+/* img profile */
+.Home__center_whatprofile-img img {
+    border-radius: 50px;
+    width: 48px;
+    margin: 10px 10px 0 14px ;
+}
+
+/* What's going section */
+.Home__center_whatprofile-content {
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* input what's going*/
+.Home__container_input {
+    font-size: 1.2em;
+    padding: 25px 0px 20px 8px;
+    outline: none;
+    cursor: text;
+}
+
+[contenteditable][placeholder]:empty:before {
+    content: attr(placeholder);
+    position: absolute;
+    color: gray;
+    background-color: transparent;
+}
+
+/* svgs && button tweet */
+.Home__center_whatprofile-svg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.Home__center_whatprofile-svgs {
+    padding-top: 14px;
+    padding-left: 3px;
+}
+.Home__center_whatprofile-svgs svg {
+    width: 20px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.Home__center_whatprofile-svgs, .home__center_contain_nextbutton {
+    height: 35px;
+}
+
+.Home__center_whatprofile-svg input {
+    margin-right: 10px;
+    font-size: .9em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    width: 78px;
+    border-radius: 50px;
+    padding: 10px 0;
+    opacity: .5;
+    background-color: var(--blue-buttontweet);
+}

@@ -4,8 +4,18 @@ function NotFound() {
   return (
     <div>
       PAGE NOT FOUND
-      <Link to="/">Inicio</Link>
-      <Link to="/loginpage">Registro</Link>
+      <div>
+        <Link to="/">Inicio</Link>
+      </div>
+      <div>
+        <Link to="/signup">Registro</Link>
+      </div>
+      <div>
+        <Link to="/login">Inicia Sesion</Link>
+      </div>
+      <div>
+        <Link to="/home">Home</Link>
+      </div>
     </div>
   )
 }

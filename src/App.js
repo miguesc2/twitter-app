@@ -4,7 +4,7 @@ import Home from './components/main/Home';
 import Login from './components/registrationAndLogin/Login';
 import RegistrationPage from './components/registrationAndLogin/RegistrationPage';
 import SignUp from './components/registrationAndLogin/SignUp';
-//import NotFound from './components/NotFound';
+import NotFound from './components/NotFound';
 //import Api from './components/Api';
 
 const App = () => (
@@ -15,7 +15,7 @@ const App = () => (
       <Route exact path="/login" component={ Login } />
       <Route exact path="/home" component={ Home } />
       {/* <Route exact path="/api" component={ Api } /> */}
-      <Route component={ RegistrationPage } />
+      <Route component={ NotFound } />
     </Switch>
   </BrowserRouter>
 )

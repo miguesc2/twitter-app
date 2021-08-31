@@ -1,0 +1,77 @@
+.Home__center_topTweetText {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Home__center_figcapTweet {
+    margin-right: 10px;
+}
+
+.Home__center_figcapTweet figcaption {
+    font-size: .9em;
+}
+
+.Home__center_figcapTweet figcaption a {
+    text-decoration: none;
+    color: rgb(27, 149, 224);
+}
+
+.Home__center_imgTweet {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.Home__center_TextProfile {
+    font-weight: 600;
+    font-size: .9em;
+    margin-right: 5px;
+}
+
+.Home__center_TextUsername {
+    color: rgb(83, 100, 113);
+    font-size: .9em;
+    margin-right: 5px;
+}
+
+.Home__center_Dot {
+    margin-right: 5px;
+    color: rgb(83, 100, 113);
+}
+
+.Home__center_Time {
+    color: rgb(83, 100, 113);
+    font-size: .9em;
+}
+
+.Home__center_likesTweet {
+    padding-top: 10px;
+    padding-left: 3px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.Home__center_likesTweet svg {
+    width: 20px;
+    cursor: pointer;
+}
+
+.Home__center_likesTweet div {
+    display: flex;
+    align-items: center;
+}
+
+.Home__center_likesTweet div span {
+    margin-left: 8px;
+    font-size: .9em;
+    color: rgb(83, 100, 113);
+}

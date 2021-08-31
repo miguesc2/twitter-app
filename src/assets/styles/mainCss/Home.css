@@ -1,0 +1,24 @@
+:root {
+    --gray-light: rgba(128, 128, 128, .1);
+    --blue-buttontweet: rgb(29, 155, 240);
+}
+
+.container__main {
+    display: flex;
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.container__main_left {
+    width: 21.8%;
+}
+
+.container__main_center {
+    width: 47%;
+    border-left: 1px solid var(--gray-light);
+    border-right: 1px solid var(--gray-light);
+}
+
+.container__main_right {
+    width: 31.2%;
+}

@@ -1,0 +1,9 @@
+.home__contain_Right {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.home__right_bgSearch {
+    background: rgb(247, 249, 249);
+    border-radius: 50px;
+}
