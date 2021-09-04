@@ -1,23 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import '../../assets/styles/registrationAndLoginCss/Login.css'
-import { baseUrlLogin } from '../../services/notes';
+import { baseUrlLogin } from '../../services/urls';
+import { store } from '../../store';
 
 function LoginPage({ twittericon }) {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
-  const handleClick = () => {
-    let url = baseUrlLogin
-    axios.post(url, nameinput)
-    .then(response => {
-      console.log(response.data.message)
-      //const respuesta = response.data.message;
-    })
-  }
-
   const [nameinput, setNameinput] = useState('');
   
   const handleInput = event => {
@@ -26,7 +15,23 @@ function LoginPage({ twittericon }) {
       [event.target.name]: event.target.value
     })
   }
-  //console.log(nameinput)
+
+  const history = useHistory()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    let url = baseUrlLogin
+    
+    axios.post(url, nameinput)
+    .then(response => {
+      store.dispatch({ type: 'loginrequest', payload: response })      
+      console.log(response)
+      history.push("/home")
+    })
+    .catch((error) => {
+      console.log(error.response.data);
+    });
+  }
 
   return (
     <div className="login__container">
@@ -52,7 +57,7 @@ function LoginPage({ twittericon }) {
             </div>
 
             <label className="login__contain_nextbutton">
-              <input type="submit" value="Log in" onClick={ handleClick } />
+              <input type="submit" value="Log in" />
             </label>
 
             <div className="login__contain_ancla">

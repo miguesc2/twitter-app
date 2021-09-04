@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer, { initialState } from './reducers/reducer';
-import { getAll } from './services/notes';
+import { getAll } from './services/urls';
 
 
 export const store = createStore(

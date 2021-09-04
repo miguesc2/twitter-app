@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { connect } from 'react-redux';
 import axios from 'axios'
 import '../../assets/styles/registrationAndLoginCss/SignUp.css'
-import { baseUrl } from '../../services/notes';
+import { baseUrlUser } from '../../services/urls';
 
 function LoginPage({ months, twittericon }) {
   const arrayNumbers = []
@@ -29,7 +29,7 @@ function LoginPage({ months, twittericon }) {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    try { await axios.post( baseUrl, nameinput,) } 
+    try { await axios.post( baseUrlUser, nameinput,) } 
     catch(error) { 
       console.log(error)
     }

@@ -5,7 +5,7 @@ import Login from './components/registrationAndLogin/Login';
 import RegistrationPage from './components/registrationAndLogin/RegistrationPage';
 import SignUp from './components/registrationAndLogin/SignUp';
 import NotFound from './components/NotFound';
-//import Api from './components/Api';
+import PrivateRoute from './components/main/PrivateRoute';
 
 const App = () => (
   <BrowserRouter>
@@ -13,8 +13,8 @@ const App = () => (
       <Route exact path="/" component={ RegistrationPage } />
       <Route exact path="/signup" component={ SignUp } />
       <Route exact path="/login" component={ Login } />
-      <Route exact path="/home" component={ Home } />
-      {/* <Route exact path="/api" component={ Api } /> */}
+      <PrivateRoute exact path="/home" component={ Home } />
+      {/* <Route exact path="/home" component={ Home } /> */}
       <Route component={ NotFound } />
     </Switch>
   </BrowserRouter>

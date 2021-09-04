@@ -5,16 +5,16 @@ function NotFound() {
     <div>
       PAGE NOT FOUND
       <div>
-        <Link to="/">Inicio</Link>
+        <Link target="_blank" to="/">Inicio</Link>
       </div>
       <div>
-        <Link to="/signup">Registro</Link>
+        <Link target="_blank" to="/signup">Registro</Link>
       </div>
       <div>
-        <Link to="/login">Inicia Sesion</Link>
+        <Link target="_blank" to="/login">Inicia Sesion</Link>
       </div>
       <div>
-        <Link to="/home">Home</Link>
+        <Link target="_blank" to="/home">Home</Link>
       </div>
     </div>
   )

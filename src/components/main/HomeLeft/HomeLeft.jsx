@@ -1,7 +1,8 @@
+import { connect } from 'react-redux'
 import '../../../assets/styles/mainCss/HomeLeft.css'
 import HomeLeftSvgs from './HomeLeftSvgs'
 
-function HomeLeft() {
+function HomeLeft({ username }) {
   return (
     <>
       <svg viewBox="0 0 24 24" aria-hidden="true" className="login__main_home--svg" alt="registerSvg">
@@ -19,11 +20,12 @@ function HomeLeft() {
 
       <div className="home__profile_options">
         <div>
+          {/* https://i.ibb.co/Bs9LLZ2/avatardefault.png */}
           <img src="https://pbs.twimg.com/profile_images/1275465924880015360/zh_8s1x2_normal.jpg" alt="imgProfile" />
         </div>
         <div>
           <div className="home__profile_items">
-            <span className="home__name">Maggel gm</span>
+            <span className="home__name">{ username }</span>
             <span className="home__username">@miguelangelesc0</span>
           </div>
         </div>
@@ -41,4 +43,10 @@ function HomeLeft() {
   )
 }
 
-export default HomeLeft
+const mapStateToProps = state => {
+  return {
+    username: state.userLogin.data.user.username
+  }
+}
+
+export default connect(mapStateToProps, null) (HomeLeft)

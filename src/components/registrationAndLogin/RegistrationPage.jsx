@@ -1,8 +1,38 @@
+import { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import '../../assets/styles/registrationAndLoginCss/RegistrationPage.css'
 
-function RegistrationPage({ twittericon, googleicon, appleicon }) {    
+function RegistrationPage({ twittericon, googleicon, appleicon }) {
+  const arrayTexts = [
+    "Sign in to Twitter", 
+    "Sign in with Google (not avaible)", 
+    "Sign in with Apple (not avaible)", 
+    <Link to="/login" id="registration__noDecoration">
+      <span>Register as a New User</span>
+    </Link>, 
+    "You do not have an account?",
+    ""
+  ]
+  const arrayTextsOriginals = [
+    "Join Twitter today",
+    "Sign up with Google (not avaible)",
+    "Sign up with Apple (not avaible)",
+    <Link to="/signup" id="registration__noDecoration">
+      <span>Login with User</span>
+    </Link>,
+    "Do you already have an account?",
+    <div className="register__main--icons register__main__icons--links">
+      <small>By registering, you accept the <a href="/">Terms of Service</a> and the <a href="/">Privacy Policy</a>, including the <a href="/"> Use of Cookies</a>.</small>
+    </div>
+  ]
+  const [ textChange, setTextchange ] = useState(arrayTextsOriginals)
+
+  const changeTexts = (e) => {
+    e.preventDefault()
+    textChange[0] === "Join Twitter today" ? setTextchange(arrayTexts) : setTextchange(arrayTextsOriginals)
+  }
+
   return (
     <>
       <div className="register__container">
@@ -26,7 +56,7 @@ function RegistrationPage({ twittericon, googleicon, appleicon }) {
             </g>
           </svg>
           <h1>What is happening now</h1>
-          <h2>Join Twitter today.</h2>
+          <h2>{ textChange[0] }</h2>
           <div className="register__container_main">
             <div className="register__main--icons">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="register__main_icon--svg" alt="registerSvg">
@@ -37,7 +67,7 @@ function RegistrationPage({ twittericon, googleicon, appleicon }) {
                   <path fill={ googleicon.colors[3] } d={ googleicon.paths[3] } />
                 </g>
               </svg>
-              <span>Sign up with Google</span>
+              <span>{ textChange[1] }</span>
             </div>
 
             <div className="register__main--icons">
@@ -46,21 +76,17 @@ function RegistrationPage({ twittericon, googleicon, appleicon }) {
                   <path d={ appleicon } />
                 </g>
               </svg>
-              <span>Sign up with Apple</span>
+              <span>{ textChange[2] }</span>
             </div>
 
-            <div className="register__main--icons">
-              <Link to="/signup">
-                <span>Sign up with phone number or email</span>
-              </Link>
+            <div className="register__main--icons register__main_icons-Link">
+            { textChange[3] }
             </div>
 
-            <div className="register__main--icons register__main__icons--links">
-              <small>By registering, you accept the <a href="/">Terms of Service</a> and the <a href="/">Privacy Policy</a>, including the <a href="/"> Use of Cookies</a>.</small>
-            </div>
+            { textChange[5] }
 
             <div className="register__main--icons register__main__icons--links">
-              <p>Do you already have an account? <a href="/">Log in</a></p>
+              <p>{ textChange[4] } <a href="/login" onClick={ changeTexts }>Log in</a></p>
             </div>
           </div>
         </div>  
