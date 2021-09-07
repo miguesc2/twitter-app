@@ -38,7 +38,7 @@
     width: 79%;
 }
 .homeRight_XBg {
-    display: none;
+    opacity: .2;
     height: 11.87px;
     width: 11%;
     text-align: center;
@@ -46,4 +46,45 @@
 .homeRight_magnifyingGlass--X {
     margin: 0px;
     padding: 0px;
+}
+
+/* What's going on */
+.homeRight_Section {
+    background: rgb(239, 243, 244);
+    border-radius: 15px;
+    padding-bottom: 5px;
+}
+
+.homeRight_Section>p {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 0 0 10px;
+}
+
+.homeRight_trendPh {
+    font-size: .9em;
+    padding: 0;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.homeRight_Section_Spacing {
+    padding: 10px 10px 0 10px;
+    transition-duration: .5s;
+}
+
+.homeRight_Section_Spacing:hover {
+    background: rgb(229, 232, 233);
+    transition-duration: .5s;
+}
+
+.homeRight_trendText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.homeRight_trendTexts {
+    color: gray;
+    font-size: .9em;
+    font-weight: normal;
 }

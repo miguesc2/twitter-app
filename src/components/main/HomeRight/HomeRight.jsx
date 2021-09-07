@@ -26,6 +26,26 @@ function HomeRight() {
           </div>
           
         </div>
+
+        <div className="homeRight_Section">
+          <p className="">What's going on</p>
+          <div className="homeRight_Section_Spacing">
+
+            <div className="homeRight_trendText">
+              <span className="homeRight_trendTexts">Trend in Colombia</span>
+              <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
+                <g fill="rgba(29,161,242,1.00)">
+                  <circle cx="5" cy="12" r="2"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                </g>
+              </svg>
+            </div>
+            <p className="homeRight_trendPh">The RAE</p>
+            <p className="homeRight_trendPh homeRight_trendTexts">13 mil Tweets</p>
+
+          </div>
+        </div>
       </div>
     </>
   )

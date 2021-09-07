@@ -13,22 +13,22 @@ function HomeCenter() {
           </g>
         </svg>
       </div>
-      <div className="Home__center_whatprofile"> 
-        <div className="Home__center_whatprofile-img">
-          <img src="https://pbs.twimg.com/profile_images/1275465924880015360/zh_8s1x2_normal.jpg" alt="imgProfile" />
-        </div>  
-        <div className="Home__center_whatprofile-content">
-          <div className="Home__center_whatprofile-input">
-            <div id="Home__container_inputs">
-              <div contentEditable="true" className="Home__container_input" placeholder="What's going on?">
+      <form action="">
+        <div className="Home__center_whatprofile"> 
+          <div className="Home__center_whatprofile-img">
+            <img src="https://pbs.twimg.com/profile_images/1275465924880015360/zh_8s1x2_normal.jpg" alt="imgProfile" />
+          </div> 
+          <div className="Home__center_whatprofile-content">
+            <div className="Home__center_whatprofile-input">
+              <div id="Home__container_inputs">
+                <div contentEditable="true" className="Home__container_input" placeholder="What's going on?"></div>
               </div>
             </div>
+            <div className="Home__center_whatprofile-svg"> <HomeCenterSvgs /> </div>
           </div>
-          <div className="Home__center_whatprofile-svg"> <HomeCenterSvgs /> </div>
         </div>
-      </div>
-      <div className="Home__center_whatprofile Home__center_tweetsection"> <HomeCenterTweets /> </div>
-      <div className="Home__center_whatprofile Home__center_tweetsection"> <HomeCenterTweets /> </div>
+      </form>
+      <div className="Home__center_whatprofile Home__center_tweetsection"> <HomeCenterTweets /></div>
     </>
   )
 }

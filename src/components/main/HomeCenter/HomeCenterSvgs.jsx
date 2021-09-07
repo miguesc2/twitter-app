@@ -38,8 +38,9 @@ function HomeCenterSvgs() {
           </g>
         </svg>
       </div>
-      <label className="home__center_contain_nextbutton">
-        <input type="button" value="Tweet" />
+      
+      <label className="home__center_contain_nextbutton" htmlFor="TweetId">
+        <input type="submit" id="TweetId" value="Tweet" />
       </label>
     </>
   )
