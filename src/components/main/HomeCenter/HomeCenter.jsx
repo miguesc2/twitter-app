@@ -1,8 +1,39 @@
+import { connect } from 'react-redux'
 import '../../../assets/styles/mainCss/HomeCenter.css'
 import HomeCenterSvgs from './HomeCenterSvgs'
 import HomeCenterTweets from './HomeCenterTweets'
+import {baseUrlPosts} from '../../../services/urls'
+import axios from 'axios'
 
-function HomeCenter() {
+function HomeCenter({ aPost, urlUsers }) {
+  const nuevoArreglo = aPost.map((arrA) => {
+    const mismoId = urlUsers.find((arrB) => arrB.id === arrA.author) || {};
+    return {
+      ...mismoId,
+      ...arrA,
+    };
+  });
+  console.log(nuevoArreglo)
+
+  let urlPosts = baseUrlPosts
+  //const [ tweetValue, setTweetvalue] = setState
+
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    try { await axios.post( urlPosts, {
+      author: "sebastian",
+      body: "Prueba por JS con nombre en author, no con numeros"
+    }) } 
+    catch(error) { 
+      console.log(error)
+    }
+  }
+
+  const handleChange = event => {
+    //console.log(event.currentTarget.textContent)
+    console.log(event.target.name)
+  }
+
   return (
     <>
       <div className="Home__center_header">
@@ -13,7 +44,7 @@ function HomeCenter() {
           </g>
         </svg>
       </div>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <div className="Home__center_whatprofile"> 
           <div className="Home__center_whatprofile-img">
             <img src="https://pbs.twimg.com/profile_images/1275465924880015360/zh_8s1x2_normal.jpg" alt="imgProfile" />
@@ -21,16 +52,46 @@ function HomeCenter() {
           <div className="Home__center_whatprofile-content">
             <div className="Home__center_whatprofile-input">
               <div id="Home__container_inputs">
-                <div contentEditable="true" className="Home__container_input" placeholder="What's going on?"></div>
+                <div
+                  contentEditable="true" 
+                  className="Home__container_input" 
+                  placeholder="What's going on?"
+                  onInput={ handleChange }
+                  name="body" 
+                >
+                </div>
+                {/* 
+                  <div
+                    contentEditable='true'
+                    onInput={e => console.log('Text inside div', e.currentTarget.textContent)}
+                  >
+                    Text inside div
+                  </div> 
+                */}
               </div>
             </div>
             <div className="Home__center_whatprofile-svg"> <HomeCenterSvgs /> </div>
           </div>
         </div>
       </form>
-      <div className="Home__center_whatprofile Home__center_tweetsection"> <HomeCenterTweets /></div>
+      {/* {aPost.map(posts =>
+        <div key={ posts.id } className="Home__center_whatprofile Home__center_tweetsection">
+          <HomeCenterTweets {...posts} />
+        </div>
+      )} */}
+      {nuevoArreglo.map(posts =>
+        <div key={ posts.id } className="Home__center_whatprofile Home__center_tweetsection">
+          <HomeCenterTweets {...posts} />
+        </div>
+      )}
     </>
   )
 }
 
-export default HomeCenter
+const mapStateToProps = state => {
+  return {
+    aPost: state.userPosts.data,
+    urlUsers: state.users
+  }
+}
+export default connect(mapStateToProps, null)(HomeCenter)

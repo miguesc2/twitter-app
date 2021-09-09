@@ -5,10 +5,13 @@ import HomeCenter from './HomeCenter/HomeCenter'
 import HomeLeft from './HomeLeft/HomeLeft'
 import HomeRight from './HomeRight/HomeRight'
 import { baseUrlRefreshToken } from '../../services/urls'
+import { store } from '../../store';
 
-const Home = ({ username, userLogin }) => {
-  let urlRefresh = baseUrlRefreshToken
-  axios.get(urlRefresh, {
+const Home = ({ username }) => {
+  //let urlRefresh = baseUrlRefreshToken
+
+  /* TOKEN */
+  /* axios.get(urlRefresh, {
     params: { username }
   })
   .then(response => {
@@ -16,7 +19,7 @@ const Home = ({ username, userLogin }) => {
   })
   .catch((error) => {
     console.log(error.response.data);
-  });
+  }); */
 
   return (
     <div className="container__main">
@@ -37,7 +40,7 @@ const Home = ({ username, userLogin }) => {
 
 const mapStateToProps = state => {
   return {
-    userLogin: state.userLogin,
+    //userLogin: state.userLogin,
     username: state.userLogin?.data?.user?.username,
   }
 }

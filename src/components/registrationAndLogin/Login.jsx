@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import '../../assets/styles/registrationAndLoginCss/Login.css'
-import { baseUrlLogin } from '../../services/urls';
+import { baseUrlLogin, baseUrlPosts } from '../../services/urls';
 import { store } from '../../store';
 
 function LoginPage({ twittericon }) {
@@ -21,15 +21,27 @@ function LoginPage({ twittericon }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     let url = baseUrlLogin
+    let urlPosts = baseUrlPosts
     
     axios.post(url, nameinput)
     .then(response => {
       store.dispatch({ type: 'loginrequest', payload: response })      
-      console.log(response)
+      //console.log(response)
       history.push("/home")
     })
     .catch((error) => {
-      console.log(error.response.data);
+      //console.log(error.response.data);
+      console.log(error);
+    });
+
+    axios.get(urlPosts)
+    .then(response => {
+      store.dispatch({ type: 'seePosts', payload: response })
+      //console.log(response.data)
+    })
+    .catch((error) => {
+      //console.log(error.response.data);
+      console.log(error);
     });
   }
 

@@ -1,6 +1,13 @@
+import { connect } from 'react-redux'
 import '../../../assets/styles/mainCss/HomeCenterTweets.css'
 
-function HomeCenterTweets() {
+function HomeCenterTweets(props) {
+  console.log(props)
+  const { id, body, image, created_on, author, likes, username } = props
+  //console.log(likes.length)
+  const slices = created_on
+  const slice = slices.substring(0,10);
+
   return (
     <>
      <div className="Home__center_whatprofile-img">
@@ -12,10 +19,10 @@ function HomeCenterTweets() {
         <div className="Home__center_whatprofile-input">
           <div className="Home__center_topTweetText">
             <div>
-              <span className="Home__center_TextProfile">Kudakasai</span>
-              <span className="Home__center_TextUsername">@somoskudakasai</span>
+              <span className="Home__center_TextProfile">{ username }</span>
+              <span className="Home__center_TextUsername">@{ username }</span>
               <span className="Home__center_Dot">·</span>
-              <span className="Home__center_Time">2h</span>
+              <span className="Home__center_Time">{ slice }</span>
             </div>
             <div>
               <svg viewBox="0 0 30 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
@@ -29,8 +36,8 @@ function HomeCenterTweets() {
           </div>
           <div>
             <figure className="Home__center_figcapTweet">
-              <figcaption>Una botella de sake que apenas apareció unos segundos en un episodio del anime "Yuru Camp", ya está inspirando su "versión real" por parte de HIROMEDO STORE en Japón. <a href="/notfound">#ゆるキャン</a></figcaption>
-              <img className="Home__center_imgTweet" src="https://pbs.twimg.com/card_img/1432503143364009985/GkmHg2qZ?format=jpg&name=small" alt="imgtesting" />
+              <figcaption>{ body } <a href="/notfound">{/* #ゆるキャン */}</a></figcaption>
+              { image === null ? <img className="Home__center_imgTweet" src={ image } alt="imgtesting" style={{display: 'none'}} /> : <img className="Home__center_imgTweet" src={ image } alt="imgtesting" /> }
             </figure>
           </div>
 
@@ -57,7 +64,7 @@ function HomeCenterTweets() {
                   <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
                 </g>
               </svg>
-              <span>463</span>
+              <span>{ likes.length }</span>
             </div>
             <svg viewBox="0 0 24 24" aria-hidden="true" className="login__main--svg" alt="registerSvg">
               <g fill="rgb(83, 100, 113)">
