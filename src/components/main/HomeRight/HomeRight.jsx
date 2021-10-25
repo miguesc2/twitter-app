@@ -1,5 +1,13 @@
+import { useHistory } from 'react-router'
 import '../../../assets/styles/mainCss/HomeRight.css'
+
 function HomeRight() {
+  const history = useHistory()
+  const clearLocalStorage = (event) => {
+    event.preventDefault()
+    localStorage.clear()
+    history.push('/')
+  }
   return (
     <>
       <div className="home__contain_Right">
@@ -27,7 +35,7 @@ function HomeRight() {
           
         </div>
 
-        <div className="homeRight_Section">
+        <div className="homeRight_Section mt-4">
           <p className="">What's going on</p>
           <div className="homeRight_Section_Spacing">
 
@@ -46,6 +54,9 @@ function HomeRight() {
 
           </div>
         </div>
+        <label className="home__contain_nextbutton col-12">
+          <input type="button" value="provisional logout" onClick={clearLocalStorage}/>
+        </label>
       </div>
     </>
   )

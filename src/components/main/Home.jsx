@@ -1,14 +1,13 @@
-import axios from 'axios';
+//import axios from 'axios';
 import { connect } from 'react-redux'
 import '../../assets/styles/mainCss/Home.css'
+import Layout from '../Layout'
 import HomeCenter from './HomeCenter/HomeCenter'
-import HomeLeft from './HomeLeft/HomeLeft'
-import HomeRight from './HomeRight/HomeRight'
-import { baseUrlRefreshToken } from '../../services/urls'
-import { store } from '../../store';
+//import { baseUrlRefreshToken, baseUrlProfile } from '../../services/urls'
 
 const Home = ({ username }) => {
   //let urlRefresh = baseUrlRefreshToken
+  //let urlProfile = baseUrlProfile
 
   /* TOKEN */
   /* axios.get(urlRefresh, {
@@ -21,27 +20,30 @@ const Home = ({ username }) => {
     console.log(error.response.data);
   }); */
 
-  return (
-    <div className="container__main">
-      <div className="container__main_left">
-        <HomeLeft />
-      </div>
+  /* PROFILE */
+  /* axios.get(urlProfile, {
+    headers: {authorization: "Token 7ba5a5229aa6cfa78ae271f1fa958351774c28a1"}
+  })
+  .then(response => {
+    console.log(response.data)
+  })
+  .catch((error) => {
+    console.log(error.response.data);
+  }); */
 
+  return (
+    <Layout>
       <div className="container__main_center">
         <HomeCenter />
       </div>
-
-      <div className="container__main_right">
-        <HomeRight />
-      </div>
-    </div>
+    </Layout>
   )
 }
 
 const mapStateToProps = state => {
+  //console.log(state)
   return {
-    //userLogin: state.userLogin,
-    username: state.userLogin?.data?.user?.username,
+    username: state.userLogin.data.user.username,
   }
 }
 

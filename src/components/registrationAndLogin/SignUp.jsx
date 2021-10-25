@@ -101,9 +101,12 @@ function LoginPage({ months, twittericon }) {
               </div>
             </div>
 
-            <label className="signup__contain_nextbutton">
+            <label className="signup__contain_nextbutton col-12">
               <input type="submit" value="Next" />
             </label>
+            <div className="login__contain_ancla">
+              <a href="/login">Sign in on Twitter</a>
+            </div>
           </form>
         </div>
       </div>

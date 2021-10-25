@@ -12,21 +12,20 @@ function HomeLeft({ username }) {
       </svg>
         
       <div className="home__lists">
-        <HomeLeftSvgs />    
-        <label className="home__contain_nextbutton">
+        <HomeLeftSvgs />
+        <label className="home__contain_nextbutton col-12">
           <input type="button" value="Tweet" />
         </label>
       </div>
 
       <div className="home__profile_options">
         <div>
-          {/* https://i.ibb.co/Bs9LLZ2/avatardefault.png */}
-          <img src="https://pbs.twimg.com/profile_images/1275465924880015360/zh_8s1x2_normal.jpg" alt="imgProfile" />
+          <img src="https://i.ibb.co/Bs9LLZ2/avatardefault.png" alt="imgProfile" />
         </div>
         <div>
           <div className="home__profile_items">
             <span className="home__name">{ username }</span>
-            <span className="home__username">@miguelangelesc0</span>
+            <span className="home__username">@{ username }</span>
           </div>
         </div>
         <div className="home__dots">
@@ -45,7 +44,7 @@ function HomeLeft({ username }) {
 
 const mapStateToProps = state => {
   return {
-    username: state.userLogin.data.user.username
+    username: state.userLogin.data.user.username,
   }
 }
 

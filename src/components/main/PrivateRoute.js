@@ -3,7 +3,9 @@ import { Redirect, Route } from "react-router"
 
 const PrivateRoute = ({ userAuth, component: Component, ...rest }) => {
   return (
-    <Route {...rest}>{ userAuth.length === 0 ? <Redirect to="/login" /> : <Component /> }</Route>
+    <Route { ...rest }>
+      { userAuth.length === 0 ? <Redirect to="/login" /> : <Component /> }
+    </Route>
   )
 }
 

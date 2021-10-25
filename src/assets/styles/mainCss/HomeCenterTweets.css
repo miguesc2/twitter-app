@@ -75,3 +75,15 @@ figure {
     font-size: .9em;
     color: rgb(83, 100, 113);
 }
+
+.linksGlobal {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* CLICK STYLES ON A POST */
+.spanCenterPost {
+    width: 47%;
+    border-left: 1px solid var(--gray-light);
+    border-right: 1px solid var(--gray-light);
+}

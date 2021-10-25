@@ -5,8 +5,9 @@ import { useHistory } from 'react-router-dom';
 import '../../assets/styles/registrationAndLoginCss/Login.css'
 import { baseUrlLogin, baseUrlPosts } from '../../services/urls';
 import { store } from '../../store';
+import { loginrequest } from '../../actions/action';
 
-function LoginPage({ twittericon }) {
+function LoginPage(props, { twittericon }) {
   const [nameinput, setNameinput] = useState('');
   
   const handleInput = event => {
@@ -22,11 +23,12 @@ function LoginPage({ twittericon }) {
     e.preventDefault()
     let url = baseUrlLogin
     let urlPosts = baseUrlPosts
-    
+    //localStorage.setItem('nombre', 'juan')
     axios.post(url, nameinput)
     .then(response => {
-      store.dispatch({ type: 'loginrequest', payload: response })      
-      //console.log(response)
+      props.loginrequest(response)
+      localStorage.setItem('userLogin', JSON.stringify(response))
+      
       history.push("/home")
     })
     .catch((error) => {
@@ -34,15 +36,15 @@ function LoginPage({ twittericon }) {
       console.log(error);
     });
 
-    axios.get(urlPosts)
+    /* axios.get(urlPosts)
     .then(response => {
       store.dispatch({ type: 'seePosts', payload: response })
-      //console.log(response.data)
+      //localStorage.setItem("data", JSON.stringify(response))
     })
     .catch((error) => {
       //console.log(error.response.data);
       console.log(error);
-    });
+    }); */
   }
 
   return (
@@ -68,13 +70,13 @@ function LoginPage({ twittericon }) {
               <input type="password" id="passwordInput" required name="password" autoComplete="on" onChange={ handleInput } />
             </div>
 
-            <label className="login__contain_nextbutton">
+            <label className="login__contain_nextbutton col-12">
               <input type="submit" value="Log in" />
             </label>
 
             <div className="login__contain_ancla">
               <a href="/">Did you forget your password? · </a>
-              <a href="/">Sign up on Twitter</a>
+              <a href="/signup">Sign up on Twitter</a>
             </div>
           </form>
         </div>
@@ -84,9 +86,14 @@ function LoginPage({ twittericon }) {
 }
 
 const mapStateToProps = state => {
+  //console.log(state)
   return {
     twittericon: state.images.twittericon,
   }
 }
 
-export default connect(mapStateToProps, null)(LoginPage)
+const mapDispatchToProps = {
+  loginrequest
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
