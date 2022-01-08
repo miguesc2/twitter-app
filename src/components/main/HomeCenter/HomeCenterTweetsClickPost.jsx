@@ -6,14 +6,13 @@ import '../../../assets/styles/mainCss/HomeCenterTweets.css'
 import { baseUrlPosts } from '../../../services/urls';
 import Layout from '../../Layout';
 import HomeCenterInteractions from './HomeMini/HomeCenterInteractions';
-//https://twiter-api.herokuapp.com/post/socialpost/1
 
-function HomeCenterTweetsClickPost({ setData }) {
+function HomeCenterTweetsClickPost({ usernameLogin }) {
   const { postId } = useParams() //obtengo el id de mi url
   const [ onePost, setOnePost ] = useState([])
   const url = baseUrlPosts
 
-  console.log(onePost)
+  //console.log(onePost)
   useEffect(() => {
     getData()
   }, [])
@@ -76,7 +75,7 @@ function HomeCenterTweetsClickPost({ setData }) {
               </div>
             </div>
 
-            <HomeCenterInteractions likes={onePost.likes} id={onePost.id} usernameLogin={onePost.usernameLogin} />
+            <HomeCenterInteractions id={onePost.id} usernameLogin={usernameLogin} likes={onePost.likes} />
           </div>
 
         </div>
@@ -90,7 +89,8 @@ const mapStateToProps = state => {
   /* console.log(state.users) */
   return {
     //setData: state.data
-    setData: state.saveDataPost
+    setData: state.saveDataPost,
+    usernameLogin: state.userLogin.data.user.username
   }
 }
 

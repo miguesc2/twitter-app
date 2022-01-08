@@ -22,8 +22,7 @@ function LoginPage(props, { twittericon }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     let url = baseUrlLogin
-    let urlPosts = baseUrlPosts
-    //localStorage.setItem('nombre', 'juan')
+
     axios.post(url, nameinput)
     .then(response => {
       props.loginrequest(response)
@@ -35,16 +34,6 @@ function LoginPage(props, { twittericon }) {
       //console.log(error.response.data);
       console.log(error);
     });
-
-    /* axios.get(urlPosts)
-    .then(response => {
-      store.dispatch({ type: 'seePosts', payload: response })
-      //localStorage.setItem("data", JSON.stringify(response))
-    })
-    .catch((error) => {
-      //console.log(error.response.data);
-      console.log(error);
-    }); */
   }
 
   return (
@@ -86,7 +75,6 @@ function LoginPage(props, { twittericon }) {
 }
 
 const mapStateToProps = state => {
-  //console.log(state)
   return {
     twittericon: state.images.twittericon,
   }

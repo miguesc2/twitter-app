@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Home from './components/main/Home';
 import Login from './components/registrationAndLogin/Login';
 import RegistrationPage from './components/registrationAndLogin/RegistrationPage';
@@ -17,7 +18,7 @@ const App = () => (
       <Route exact path="/login" component={ Login } />
       <PrivateRoute exact path="/home" component={ Home } />
       <PrivateRoute exact path="/homewatchpost/:postId" component={ HomeCenterTweetsClickPost } />
-      <PrivateRoute exact path="/profile" component={ Profile } />
+      <PrivateRoute exact path="/profile/:postsId" component={ Profile } />
       <Route component={ NotFound } />
     </Switch>
   </BrowserRouter>

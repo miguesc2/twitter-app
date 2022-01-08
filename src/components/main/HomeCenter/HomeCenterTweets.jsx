@@ -1,25 +1,20 @@
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setDatas } from '../../../actions/action';
 import '../../../assets/styles/mainCss/HomeCenterTweets.css'
 import HomeCenterInteractions from './HomeMini/HomeCenterInteractions';
 
 function HomeCenterTweets(props) {
-  const { id, body, image, created_on, author, likes, username, usernameLogin } = props
-
-  /* const slicesDate = created_on
-  const sliceDate = slicesDate.substring(0,10); */
-  
-  /* const sendPropsPost = () => {
-    props.setDatas({id, body, image, created_on, author, likes, username, usernameLogin})
-    //localStorage.setItem('saveDataPost', JSON.stringify({id, body, image, created_on, author, likes, username, usernameLogin}))
-  } */
+  const { id, body, image, created_on, author, likes, usernameLogin } = props
+  // const slicesDate = created_on
+  // const sliceDate = slicesDate.substring(0,10);
 
   return (
     <>
-      <div className="Home__center_whatprofile-img">
-        <img src="https://i.ibb.co/Bs9LLZ2/avatardefault.png" alt="imgProfile" />
-      </div>
+      <Link to={ `/profile/${author}` } className="linksGlobal">
+        <div className="Home__center_whatprofile-img">
+          <img src="https://i.ibb.co/Bs9LLZ2/avatardefault.png" alt="imgProfile" />
+        </div>
+      </Link>
       
       <div className="Home__center_whatprofile-content">
           <div className="Home__center_whatprofile-input" id={ id }>
@@ -62,9 +57,6 @@ const mapStateToProps = state => {
     usernameLogin: state.userLogin.data.user.username
   }
 }
-/* const mapDispatchToProps = {
-  setDatas
-} */
 
 //export default connect(mapStateToProps, mapDispatchToProps) (HomeCenterTweets)
 export default connect(mapStateToProps, null) (HomeCenterTweets)

@@ -3,7 +3,7 @@ export const loginrequest = payload => ({
     payload,
 })
 
-export const setDatas = payload => ({
+/* export const setDatas = payload => ({
     type: 'SET_DATAS',
     payload,
-})
+}) */

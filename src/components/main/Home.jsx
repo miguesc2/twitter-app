@@ -7,22 +7,10 @@ import HomeCenter from './HomeCenter/HomeCenter'
 
 const Home = ({ username }) => {
   //let urlRefresh = baseUrlRefreshToken
-  //let urlProfile = baseUrlProfile
 
   /* TOKEN */
   /* axios.get(urlRefresh, {
     params: { username }
-  })
-  .then(response => {
-    console.log(response.data)
-  })
-  .catch((error) => {
-    console.log(error.response.data);
-  }); */
-
-  /* PROFILE */
-  /* axios.get(urlProfile, {
-    headers: {authorization: "Token 7ba5a5229aa6cfa78ae271f1fa958351774c28a1"}
   })
   .then(response => {
     console.log(response.data)

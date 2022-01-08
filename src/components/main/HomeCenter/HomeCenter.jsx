@@ -23,6 +23,7 @@ function HomeCenter({ aPost, urlUsers, idUsers }) {
     try { await axios.post( urlPosts, {
       author: idUsers,
       body: tweetValue,
+      likes: []
     }) } 
     catch(error){ 
       console.log(error)
@@ -118,11 +119,10 @@ function HomeCenter({ aPost, urlUsers, idUsers }) {
 }
 
 const mapStateToProps = state => {
-  //console.log(state)
   return {
     aPost: state.userPosts,
     urlUsers: state.users,
-    idUsers: state.userLogin.data.user.id,
+    idUsers: state.userLogin.data.user.username,
   }
 }
 export default connect(mapStateToProps, null)(HomeCenter)

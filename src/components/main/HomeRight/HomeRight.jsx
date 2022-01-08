@@ -6,7 +6,7 @@ function HomeRight() {
   const clearLocalStorage = (event) => {
     event.preventDefault()
     localStorage.clear()
-    history.push('/')
+    history.push('/login')
   }
   return (
     <>

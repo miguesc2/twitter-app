@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer, { initialState } from './reducers/reducer';
-import { getAll, watches, watchPosts } from './services/urls';
+import { getAll, watchPosts } from './services/urls';
 
 export const store = createStore(
   reducer,
@@ -16,15 +16,3 @@ getAll().then(users => {
 watchPosts().then(post => {
   store.dispatch({ type: 'seePosts', payload: post })
 })
-
-
-
-
-
-
-
-
-
-/* watches().then(arrCompleted => {
-  store.dispatch({ type: 'SET_DATAS', payload: arrCompleted })
-}) */
