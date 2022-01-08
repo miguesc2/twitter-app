@@ -6,7 +6,10 @@ function NotFound() {
     <div className="notFound">
       <p>Esta página no existe. Intenta hacer otra búsqueda.</p>
       <div>
-        <Link className="linkStyle" to="/home">Home</Link>
+        <Link className="linkStyle" to="/home">Iniciar Sesion</Link>
+      </div><br />
+      <div>
+        <Link className="linkStyle" to="/">Inicio</Link>
       </div>
     </div>
   )
