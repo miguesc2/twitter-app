@@ -6,6 +6,7 @@ function HomeRight() {
   const clearLocalStorage = (event) => {
     event.preventDefault()
     localStorage.clear()
+    window.location.reload(); //recargo página, pues al volver atrás se seguia mostrando la info.
     history.push('/login')
   }
   return (

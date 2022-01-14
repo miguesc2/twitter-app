@@ -79,3 +79,8 @@
     margin-bottom: 30px;
     margin-top: 15px;
 }
+
+/* ESTILOS ORIGINALES LOS DE ARRIBA, LO SIGUIENTE ES AGREGADO, TENLO EN CUENTA */
+.login__contain_ancla {
+    padding-left: 30px;
+}
