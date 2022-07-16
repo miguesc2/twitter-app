@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-function RegistrationPageButtons({ twittericon, googleicon, appleicon }) {
+function RegisterRight({ props }) {
+  const { twittericon, googleicon, appleicon } = props
+  const { paths } = googleicon
+
   const arrayTexts = [
     "Sign in to Twitter", 
     "Sign in with Google (not avaible)", 
@@ -11,7 +13,6 @@ function RegistrationPageButtons({ twittericon, googleicon, appleicon }) {
     "You do not have an account?", 
     ""
   ]
-
   const arrayTextsOriginals = [
     "Join Twitter today",
     "Sign up with Google (not avaible)",
@@ -45,45 +46,32 @@ function RegistrationPageButtons({ twittericon, googleicon, appleicon }) {
       <h2>{ textChange[0] }</h2>
       
       <div className="register__container_main mt-4">
+        
+        <div className="register__main--icons register__main_icons-Link"> { textChange[3] } </div>
+        
         <div className="register__main--icons">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="register__main_icon--svg" alt="registerSvg">
-            <g>
-              <path fill={ googleicon.colors[0] } d={ googleicon.paths[0] } />
-              <path fill={ googleicon.colors[1] } d={ googleicon.paths[1] } />
-              <path fill={ googleicon.colors[2] } d={ googleicon.paths[2] } />
-              <path fill={ googleicon.colors[3] } d={ googleicon.paths[3] } />
-            </g>
+            <g> { Object.keys(paths).map( item => <path key={ item } fill={ item } d={ paths[item] } /> ) } </g>
           </svg>
           <span>{ textChange[1] }</span>
         </div>
 
         <div className="register__main--icons">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="register__main_icon--svg" alt="registerSvg">
-            <g fill="black">
-              <path d={ appleicon } />
-            </g>
+            <g fill="black"> <path d={ appleicon } /> </g>
           </svg>
           <span>{ textChange[2] }</span>
         </div>
-
-        <div className="register__main--icons register__main_icons-Link"> { textChange[3] } </div>
 
         { textChange[5] }
 
         <div className="register__main--icons register__main__icons--links">
           <p>{ textChange[4] } <a href="/login" onClick={ changeTexts }>Log in</a></p>
         </div>
+
       </div>
     </div> 
   )
 }
-
-const mapStateToProps = state => {
-  return {
-    twittericon: state.images.twittericon,
-    googleicon: state.images.googleicon,
-    appleicon: state.images.appleicon,
-  }
-}
   
-export default connect(mapStateToProps, null) (RegistrationPageButtons)
+export default RegisterRight

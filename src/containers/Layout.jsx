@@ -1,5 +1,5 @@
-import HomeLeft from "./main/HomeLeft/HomeLeft"
-import HomeRight from "./main/HomeRight/HomeRight"
+import HomeLeft from "../components/main/HomeLeft/HomeLeft"
+import HomeRight from "../components/main/HomeRight/HomeRight"
 
 const Layout = ({ children }) => (
   <div className="App">

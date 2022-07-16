@@ -1,13 +1,12 @@
 //import axios from 'axios';
 import { connect } from 'react-redux'
 import '../../assets/styles/mainCss/Home.css'
-import Layout from '../Layout'
+import Layout from '../../containers/Layout'
 import HomeCenter from './HomeCenter/HomeCenter'
 //import { baseUrlRefreshToken, baseUrlProfile } from '../../services/urls'
 
 const Home = ({ username }) => {
   //let urlRefresh = baseUrlRefreshToken
-
   /* TOKEN */
   /* axios.get(urlRefresh, {
     params: { username }

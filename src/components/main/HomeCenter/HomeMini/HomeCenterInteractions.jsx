@@ -42,11 +42,13 @@ function HomeCenterInteractions(props) {
         axios.patch(`https://twiter-api.herokuapp.com/post/socialpost/${id}/`, {
           likes: likes
         })
+        window.location.reload(); //No recomiendo usar estos reload, pues puede estar escribiendo un tweet y decido dar like a un post, el progreso del tweet se perdera al hacer reload, mejor eliminalo mas adelante
       } else {
         likes.push(usernameLogin)
         axios.patch(`https://twiter-api.herokuapp.com/post/socialpost/${id}/`, {
           likes: likes
         })
+        window.location.reload();
       }
     })
     .catch((error) => console.log(error))

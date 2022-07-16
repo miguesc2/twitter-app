@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router';
 import { baseUrlPosts, baseUrlProfile, baseUrlRefreshToken } from '../../services/urls';
-import Layout from '../Layout'
+import Layout from '../../containers/Layout'
 import ProfilePosts from './ProfilePosts';
 
 function Profile({ username }) {

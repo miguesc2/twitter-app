@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { useParams } from 'react-router';
 import '../../../assets/styles/mainCss/HomeCenterTweets.css'
 import { baseUrlPosts } from '../../../services/urls';
-import Layout from '../../Layout';
+import Layout from '../../../containers/Layout';
 import HomeCenterInteractions from './HomeMini/HomeCenterInteractions';
 
 function HomeCenterTweetsClickPost({ usernameLogin }) {
@@ -12,17 +12,16 @@ function HomeCenterTweetsClickPost({ usernameLogin }) {
   const [ onePost, setOnePost ] = useState([])
   const url = baseUrlPosts
 
-  //console.log(onePost)
   useEffect(() => {
+    const getData = () => {
+      axios.get(`${ url }${ postId }`)
+      .then(post => {
+        setOnePost(post.data)
+      }).catch((e) => console.log(`Hubo un error: ${ e }`))
+    }
     getData()
   }, [])
 
-  const getData = () => {
-    axios.get(`${url}${postId}`)
-    .then(post => {
-      setOnePost(post.data)
-    }).catch((e) => console.log(`Hubo un error: ${ e }`))
-  }
 
   /* const slicesDate = setData.created_on
   const sliceDate = slicesDate.substring(0,10); */

@@ -1,16 +1,16 @@
 import axios from "axios"; 
 
 export const baseUrlUser = "https://twiter-api.herokuapp.com/accounts/user/" //Url de usuarios
+export const baseUrlPosts = "https://twiter-api.herokuapp.com/post/socialpost/" //Url para crear un post
+
 export const baseUrlLogin = "https://twiter-api.herokuapp.com/login/" //url devuelve info de persona logueada.
 export const baseUrlRefreshToken = "https://twiter-api.herokuapp.com/refresh-token/" //url para obtener el token de un usuario
 export const baseUrlProfile = "https://twiter-api.herokuapp.com/accounts/profile/" //Aún no usada
-
-export const baseUrlPosts = "https://twiter-api.herokuapp.com/post/socialpost/" //Url para crear un post
 export const baseUrlPostComments = "https://twiter-api.herokuapp.com/post/socialcomment/" //url para los comentarios
 
 export const getAll = async () => {
   const res = await axios.get(baseUrlUser)
-  return res.data //users
+  return res.data
 }
 
 export const watchPosts = async () => {
