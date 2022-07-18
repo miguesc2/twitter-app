@@ -1,19 +1,22 @@
 .Home__center_header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--gray-light);
+    /* border-bottom: 1px solid var(--gray-light); */
     padding-bottom: 1px;
     padding-left: 1em;
 }
 
 .Home__center_header h1 {
     font-size: 1.3em;
-    font-weight: 500;
+    margin-top: 15px;
+    font-weight: 600;
 }
 
 /* star */
 .Home__center_header svg {
-    padding-right: .5em;
+    padding-right: .4em;
+    margin-right: 10px;
+    /* background-color: red; */
 }
 
 /* whatprofile section */
@@ -56,29 +59,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid red; */
+    margin-bottom: 10px;
 }
 
-.Home__center_whatprofile-svgs {
-    padding-top: 14px;
-    padding-left: 3px;
-    position: relative;
-}
 .Home__center_whatprofile-svgs svg {
     width: 20px;
     margin-right: 16px;
-    cursor: pointer;
-}
-
-.Home__center_whatprofile-svgs, .home__center_contain_nextbutton {
-    height: 35px;
-}
-
-#files {
-    width: 20px;
-    position: absolute;
-    left: 0;
-    opacity: 0;
 }
 
 input[type=file]::-webkit-file-upload-button { /* cursor pointer for chrome */
@@ -96,4 +82,9 @@ input[type=file]::-webkit-file-upload-button { /* cursor pointer for chrome */
     padding: 10px 0;
     opacity: .5;
     background-color: var(--blue-buttontweet);
+}
+
+.classColor {
+    background-color: var(--blue-buttontweet-click) !important;
+    opacity: 1 !important;
 }

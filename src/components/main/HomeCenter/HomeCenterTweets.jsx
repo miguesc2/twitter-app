@@ -1,32 +1,33 @@
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import HomeCenterInteractions from './HomeMiniC/HomeCenterInteractions';
 import '../../../assets/styles/mainCss/HomeCenterTweets.css'
-import HomeCenterInteractions from './HomeMini/HomeCenterInteractions';
 
 function HomeCenterTweets(props) {
-  const { id, body, image, created_on, author, likes, usernameLogin } = props
-  // const slicesDate = created_on
-  // const sliceDate = slicesDate.substring(0,10);
+  const { id, body, created_on, author, likes, usernameLogin, image } = props
 
   return (
     <>
-      <Link to={ `/profile/${author}` } className="linksGlobal">
+      <Link to={ `/profile/${ author }` } className="linksGlobal">
         <div className="Home__center_whatprofile-img">
-          <img src="https://i.ibb.co/Bs9LLZ2/avatardefault.png" alt="imgProfile" />
+          <img title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
         </div>
       </Link>
       
       <div className="Home__center_whatprofile-content">
           <div className="Home__center_whatprofile-input" id={ id }>
-          {/* <Link to={`/homewatchpost/${id}`} className="linksGlobal" onClick={ sendPropsPost }> */}
-          <Link to={`/homewatchpost/${id}`} className="linksGlobal">
+            {/* head */}
             <div className="Home__center_topTweetText">
               <div>
-                <span className="Home__center_TextProfile">{ author }</span>
-                <span className="Home__center_TextUsername">@{ author }</span>
-                <span className="Home__center_Dot">·</span>
-                <span className="Home__center_Time">{ created_on }</span>
+                <Link to={ `/profile/${ author }` } className="linksGlobal">
+                  <span className="Home__center_TextProfile">{ author }</span>
+                </Link>
+                <Link to={`/homewatchpost/${ id }`} className="linksGlobal">
+                  <span className="Home__center_TextUsername">@{ author }</span>
+                  <span className="Home__center_Dot">·</span>
+                  <span className="Home__center_Time">{ created_on.substring(0,10) }</span>
+                </Link>
               </div>
+             
               <div>
                 <svg viewBox="0 0 30 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
                   <g fill="rgba(29,161,242,1.00)">
@@ -37,26 +38,24 @@ function HomeCenterTweets(props) {
                 </svg>
               </div>
             </div>
-            <div>
-              <figure className="Home__center_figcapTweet">
-                <figcaption>{ body }</figcaption>
-                { image === null ? <img className="Home__center_imgTweet" src={ image } alt="imgtesting" style={{display: 'none'}} /> : <img className="Home__center_imgTweet" src={ image } alt="imgtesting" /> }
-              </figure>
-            </div>
+
+            {/* post content */}
+            <Link to={`/homewatchpost/${ id }`} className="linksGlobal">
+              <div>
+                <figure className="Home__center_figcapTweet">
+                  <figcaption>{ body }</figcaption>
+                  <img className="Home__center_imgTweet" src={ image } alt="imgtesting" />
+                </figure>
+              </div>
             </Link>
 
-            <HomeCenterInteractions id={id} usernameLogin={usernameLogin} likes={likes}/>
+            {/* interactions */}
+            <HomeCenterInteractions id={ id } usernameLogin={ usernameLogin } likes={ likes }/>
           </div>
 
       </div>   
     </>
   )
 }
-const mapStateToProps = state => {
-  return {
-    usernameLogin: state.userLogin.data.user.username
-  }
-}
 
-//export default connect(mapStateToProps, mapDispatchToProps) (HomeCenterTweets)
-export default connect(mapStateToProps, null) (HomeCenterTweets)
+export default HomeCenterTweets

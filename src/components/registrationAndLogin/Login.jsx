@@ -1,61 +1,30 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import '../../assets/styles/registrationAndLoginCss/Login.css'
-import { baseUrlLogin, baseUrlPosts } from '../../services/urls';
-import { store } from '../../store';
+import axios from 'axios';
+import useForm from '../../hooks/useForm';
+import { baseUrlLogin } from '../../services/urls';
 import { loginrequest } from '../../actions/action';
+import '../../assets/styles/registrationAndLoginCss/Login.css'
 
-function LoginPage(props, { twittericon }) {
-  const [nameinput, setNameinput] = useState('');
-  
-  const handleInput = event => {
-    setNameinput({
-      ...nameinput,
-      [event.target.name]: event.target.value
-    })
-  }
-
+function LoginPage(props) {
+  const { FunctionAlert, FunctionAlertPassw, valueClass, valueClassPassw, handleInput, nameinput } = useForm()
   const history = useHistory()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     let url = baseUrlLogin
 
-    axios.post(url, nameinput)
-    .then(response => {
+    axios.post( url, nameinput ).then( response => {
       props.loginrequest(response)
-      localStorage.setItem('userLogin', JSON.stringify(response))
-      
+      localStorage.setItem('userLogin', JSON.stringify( response ))      
       history.push("/home")
-    })
-    .catch((error) => {
-      //console.log(error.response.data);
-      console.log(error);
-    });
+    }).catch(error => { console.log( error.message ) });
   }
-
-  const [buttonNext, setButtonNext] = useState("signup__contain_nextbutton")
-  const [booleann, setBooleann] = useState(false);
-  const [valueClass, setValueClass] = useState("signup__contain_input")
-  const [valueClassPassw, setValueClassPassw] = useState("signup__contain_input signup__contain_input--password")
-  const FunctionAlert = () => {
-    setBooleann(true)
-    setValueClass("signup__contain_noInput")
-    setValueClassPassw("signup__contain_input signup__contain_input--password")
-  }
-  const FunctionAlertPassw = () => {
-    setBooleann(false)
-    setValueClassPassw("signup__contain_noInput signup__contain_input--password")
-    setValueClass("signup__contain_input")
-  }
-
-
+  
   return (
     <div className="signup__container">
       <div className="signup__container_main">
-        <img src={twittericon} alt="" />
+        <img src={ props.twittericon } alt="" />
       
         <div className='signup__iconsTop'>
           <div className="signup__contain--bird">
@@ -71,7 +40,7 @@ function LoginPage(props, { twittericon }) {
           <div className="signup__contain--bird">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="signup__main--svg" alt="registerSvg">
               <g fill="rgba(29,161,242,1.00)">
-                <path d={ twittericon } />
+                <path d={ props.twittericon } />
               </g>
             </svg>
           </div>
@@ -83,12 +52,29 @@ function LoginPage(props, { twittericon }) {
           <form className="signup__contain_form" onSubmit={ handleSubmit } id='CreateForm'>
             <div className={ valueClass }>
               <label htmlFor="nameInput">Name</label>
-              <input maxLength="50" type="text" id="nameInput" required onChange={ handleInput } name="username" onClick={ FunctionAlert } className='focusss' />
+              <input 
+                maxLength="50" 
+                type="text" 
+                id="nameInput"
+                required 
+                onChange={ handleInput } 
+                name="username" 
+                onClick={ FunctionAlert } 
+                className='focusss'
+              />
             </div>
 
             <div className={ valueClassPassw }>
               <label htmlFor="passwordInput">Password</label>
-              <input type="password" id="passwordInput" required onChange={ handleInput } name="password" autoComplete="on" onClick={ FunctionAlertPassw } />
+              <input 
+                type="password" 
+                id="passwordInput"
+                required 
+                onChange={ handleInput } 
+                name="password" 
+                autoComplete="on" 
+                onClick={ FunctionAlertPassw }
+              />
             </div>
           </form>
         </div>
@@ -106,13 +92,9 @@ function LoginPage(props, { twittericon }) {
 }
 
 const mapStateToProps = state => {
-  return {
-    twittericon: state.images.twittericon,
-  }
+  return { twittericon: state.images.twittericon }
 }
 
-const mapDispatchToProps = {
-  loginrequest
-}
+const mapDispatchToProps = { loginrequest }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

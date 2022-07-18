@@ -20,6 +20,7 @@
 
 .Home__center_imgTweet {
     width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     margin-top: 15px;
 }
@@ -80,7 +81,14 @@ figure {
     color: inherit;
     text-decoration: none;
 }
+.linksGlobal:hover {
+    color: inherit;
+    text-decoration: none;
+}
 
+.stylePLoading {
+    width: 100%;
+}
 /* CLICK STYLES ON A POST */
 .spanCenterPost {
     width: 47%;

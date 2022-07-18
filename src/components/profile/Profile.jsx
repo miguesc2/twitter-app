@@ -18,8 +18,7 @@ function Profile({ username }) {
   useEffect(() => {
     getData()
     tokenUser()
-    //tokenUserProfile()
-  }, [postsId])
+  }, [ postsId ])
   
   const getData = () => {
     axios.get(url)
@@ -28,7 +27,7 @@ function Profile({ username }) {
     }).catch((e) => console.log(`Hubo un error: ${ e }`))
   }
 
-  let results = posts.filter(function(userSearch) {
+  let results = posts.filter(function( userSearch ) {
     return userSearch.author === postsId;
   })
 
@@ -37,27 +36,19 @@ function Profile({ username }) {
     axios.get(urlRefresh, { params: { username }})
     .then(response => {
       const myTokn = response.data.token
-      //console.log(data)
-
       axios.get(urlRefresh, { params: {username: postsId} })
       .then(resp => {
         const profileTokn = resp.data.token
         myTokn === profileTokn ? setTokenValue("Editar perfil") : setTokenValue("Seguir")
       })
       .catch((error) => { console.log(error.response.data) });
-
-      /* axios.get(urlProfile, { headers: {authorization: `Token ${response.data.token}`} })
-      .then(response => {
-        console.log(response.data)
-      })
-      .catch((error) => { console.log(error.response.data) }); */
     })
     .catch((error) => { console.log(error.response.data) });
   }
 
   return (
     <>
-      <button type="button">{tokenValue}</button>
+      <button type="button">{ tokenValue }</button>
 
       <Layout>
         <div className="Home__center_whatprofile-img">

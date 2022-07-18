@@ -52,14 +52,6 @@
     padding: 5px 0 20px 0;
 }
 
-/* .login__contain_input--password {
-    padding: 15px 0 0px 0;
-} */
-
-/* ancla */
-/* .login__contain_ancla {
-} */
-
 .login__contain_ancla a {
     color: rgb(27, 149, 224);
     text-decoration: none;
@@ -80,7 +72,7 @@
     margin-top: 15px;
 }
 
-/* ESTILOS ORIGINALES LOS DE ARRIBA, LO SIGUIENTE ES AGREGADO, TENLO EN CUENTA */
 .login__contain_ancla {
     padding-left: 30px;
+    margin-bottom: 10px;
 }

@@ -15,6 +15,7 @@ const App = () => (
       <Route exact path="/" component={ RegistrationPage } />
       <Route exact path="/signup" component={ SignUp } />
       <Route exact path="/login" component={ Login } />
+      
       <PrivateRoute exact path="/home" component={ Home } />
       <PrivateRoute exact path="/homewatchpost/:postId" component={ HomeCenterTweetsClickPost } />
       <PrivateRoute exact path="/profile/:postsId" component={ Profile } />
