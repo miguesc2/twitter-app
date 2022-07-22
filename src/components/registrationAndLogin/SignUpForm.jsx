@@ -57,7 +57,7 @@ function SignUpForm() {
                     </div>
 
                     <div className="signup__contain_ancla">
-                        <a href="#">Use email</a>
+                        <a href="#x">Use email</a>
                     </div>
 
                     <div className="signup__contain_birthday">

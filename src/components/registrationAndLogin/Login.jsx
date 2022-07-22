@@ -16,7 +16,7 @@ function LoginPage(props) {
 
     axios.post( url, nameinput ).then( response => {
       props.loginrequest(response)
-      localStorage.setItem('userLogin', JSON.stringify( response ))      
+      localStorage.setItem('userLogin', JSON.stringify( response ))
       history.push("/home")
     }).catch(error => { console.log( error.message ) });
   }
@@ -83,7 +83,7 @@ function LoginPage(props) {
         </label>
 
         <div className="login__contain_ancla">
-          <a href="#">Did you forget your password? · </a>
+          <a href="#x">Did you forget your password? · </a>
           <a href="/signup">Sign up on Twitter</a>
         </div>
       </div>

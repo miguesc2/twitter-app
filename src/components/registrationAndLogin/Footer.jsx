@@ -8,7 +8,7 @@ function Footer() {
       <ul className="register__container_list--footer">
         { arr.map( texto => {
           return (
-            <li key={ texto }> <small> <a href="#"> { texto } </a> </small> </li>
+            <li key={ texto }> <small> <a href="#x"> { texto } </a> </small> </li>
           )
         })}
       </ul>

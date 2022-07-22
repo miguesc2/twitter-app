@@ -95,3 +95,93 @@ figure {
     border-left: 1px solid var(--gray-light);
     border-right: 1px solid var(--gray-light);
 }
+
+#vv1 {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+
+.flexImgName, .flexImgNameComment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexImgNameComment {
+    align-items: unset;
+    border-top: 1px solid var(--gray-light);
+}
+
+#topTweetText {
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#profile-img img {
+    margin: 0;
+}
+
+.flexUser {
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.flexUser a{
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+#letterContent {
+    font-size: 1.5em;
+}
+
+#letterContentDate {
+    font-size: 1.1em;
+}
+
+.placeToComment {
+    border-top: 1px solid var(--gray-light);
+    padding: 20px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.placeToComment input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.placeToComment input::placeholder {
+    font-size: 1.1em;
+}
+
+.dateOnePost {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.listComments {
+    /* background-color: red; */
+    margin: 10px 0;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 10px;
+}
+
+.listComments li {
+    border-bottom: 1px solid var(--gray-light);
+    margin-bottom: 10px;
+}
+.listComments img {
+    margin-right: 15px;
+    border-radius: 50px;
+    width: 40px;
+}
+.placeToComment img {
+    margin-right: 15px;
+    border-radius: 50px;
+    width: 50px;
+}

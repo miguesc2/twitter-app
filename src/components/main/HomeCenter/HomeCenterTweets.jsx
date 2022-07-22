@@ -2,14 +2,19 @@ import { Link } from 'react-router-dom';
 import HomeCenterInteractions from './HomeMiniC/HomeCenterInteractions';
 import '../../../assets/styles/mainCss/HomeCenterTweets.css'
 
-function HomeCenterTweets(props) {
-  const { id, body, created_on, author, likes, usernameLogin, image } = props
+function HomeCenterTweets( props ) {
+  const { id, body, created_on, author, likes, usernameLogin, image, comments } = props
+  let date = new Date()
+  const toHours = 60 * 60 * 1000
 
   return (
     <>
       <Link to={ `/profile/${ author }` } className="linksGlobal">
         <div className="Home__center_whatprofile-img">
-          <img title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
+          { author === usernameLogin ?
+            <img title="view profile" src="https://api.lorem.space/image/face?w=200&amp;amp;amp;amp;h=200" alt="imgProfile" /> 
+            :<img title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
+          }
         </div>
       </Link>
       
@@ -24,7 +29,17 @@ function HomeCenterTweets(props) {
                 <Link to={`/homewatchpost/${ id }`} className="linksGlobal">
                   <span className="Home__center_TextUsername">@{ author }</span>
                   <span className="Home__center_Dot">·</span>
-                  <span className="Home__center_Time">{ created_on.substring(0,10) }</span>
+                  <span className="Home__center_Time">{
+                    `${ 
+                      Math.floor( Math.abs( date - new Date( created_on ) ) / toHours ) === 0 ? 
+                      "recientemente . . ."  : 
+                      Math.floor( Math.abs( date - new Date( created_on ) ) / toHours ) === 1 ?
+                      "hace una hora" : 
+                      Math.floor( Math.abs( date - new Date( created_on ) ) / toHours ) < 24 ? 
+                      `hace ${ Math.floor( Math.abs( date - new Date( created_on ) ) / toHours ) } horas` :
+                      `${ created_on.substring( 0,10 ) } - ${ created_on.substring( 11,16 ) }`
+                    } `
+                  }</span>
                 </Link>
               </div>
              
@@ -50,7 +65,7 @@ function HomeCenterTweets(props) {
             </Link>
 
             {/* interactions */}
-            <HomeCenterInteractions id={ id } usernameLogin={ usernameLogin } likes={ likes }/>
+            <HomeCenterInteractions id={ id } usernameLogin={ usernameLogin } likes={ likes } comments={ comments } />
           </div>
 
       </div>   

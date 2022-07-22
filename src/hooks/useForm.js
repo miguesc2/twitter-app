@@ -5,7 +5,7 @@ import { baseUrlUser } from '../services/urls';
 const useForm = () => {  
   const arrayNumbers = []
   const arrayYears = []  
-  const [ nameinput, setNameinput ] = useState({username: '', password: ''});
+  const [ nameinput, setNameinput ] = useState({ username: '', password: '' });
   const [ booleann, setBooleann ] = useState(false); //To hide the number /50
   const [ valueClass, setValueClass ] = useState("signup__contain_input")
   const [ valueClassPassw, setValueClassPassw ] = useState("signup__contain_input signup__contain_input--password") 
@@ -24,7 +24,7 @@ const useForm = () => {
     setNameinput({
       ...nameinput,
       [ event.target.name ]: event.target.value
-  })
+    })
   }
   
   const handleSubmit = async(e) => {

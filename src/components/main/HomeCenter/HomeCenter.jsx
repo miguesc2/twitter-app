@@ -4,15 +4,24 @@ import axios from 'axios'
 import HomeCenterTweets from './HomeCenterTweets'
 import HomeCenterSvgs from './HomeMiniC/HomeCenterSvgs'
 import PageLoading from '../../../containers/PageLoading'
-import { baseUrlPosts, watchPosts } from '../../../services/urls'
+import { baseUrlPosts, getComments, watchPosts } from '../../../services/urls'
 import useFormHome from '../../../hooks/useFormHome'
 import '../../../assets/styles/mainCss/HomeCenter.css'
 
 function HomeCenter({ username, aPost }) {
-  const { setUsersArray, editedUsersArray }  = useFormHome()
+  const { setGetComment, setUsersArray, usersArray }  = useFormHome()
   const [ tweetValue, setTweetvalue ] = useState('')
   const handleChange = event => { setTweetvalue( event.currentTarget.textContent ) }
   
+  useEffect(() => {
+    const url = baseUrlPosts
+    const getData = () => {
+      axios.get(url).then( post => setUsersArray( post.data )).catch((e) => console.log(`Hubo un error: ${ e }`))
+      getComments().then(item => setGetComment( item.data ))
+    }
+    getData()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => { 
     watchPosts().then( item => setUsersArray( item ) )
   }, [ setUsersArray, aPost ])
@@ -67,8 +76,8 @@ function HomeCenter({ username, aPost }) {
       </form>
       
       {
-        editedUsersArray.length === 0 ? 
-        <PageLoading /> : editedUsersArray.reverse().map(posts =>
+        usersArray.length === 0 ? 
+        <PageLoading /> : usersArray.reverse().map(posts =>
           <div key={ posts.id } className="Home__center_whatprofile Home__center_tweetsection">
             <HomeCenterTweets { ...posts } usernameLogin={ username } />
           </div>
