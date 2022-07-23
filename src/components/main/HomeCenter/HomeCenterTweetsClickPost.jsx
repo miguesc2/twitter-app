@@ -76,7 +76,10 @@ function HomeCenterTweetsClickPost({ usernameLogin, usernameId }) {
                       <div className='flexImgName'>
                         <Link to={ `/profile/${ onePost.author }` } className="linksGlobal">
                           <div className="Home__center_whatprofile-img" id="profile-img">
-                            <img title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
+                          { onePost.author === usernameLogin ?
+                            <img className="profileImg" title="view profile" src="https://api.lorem.space/image/face?w=200&amp;amp;amp;amp;h=200" alt="imgProfile" /> 
+                            :<img className="profileImg" title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
+                          }
                           </div>
                         </Link>
                         
@@ -131,7 +134,7 @@ function HomeCenterTweetsClickPost({ usernameLogin, usernameId }) {
                   </div>
 
                   <div>
-                    <HomeCenterComments getCommentsOnAPost={ getComment } />
+                    <HomeCenterComments getCommentsOnAPost={ getComment } usernameLogin={ usernameLogin } />
                   </div>
 
               </div>   

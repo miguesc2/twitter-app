@@ -108,9 +108,13 @@
     color: black;
 }
 
-.register__main__icons--links a {
+.register__main__icons--links span {
     color: rgb(27, 149, 224);
     text-decoration: none;
+}
+.spanRegisterLinks {
+    font-size: 1em !important;
+    margin: 0 !important;
 }
 
 .register__main_icon--svg {
@@ -129,12 +133,6 @@
     display: inline;
     margin-right: 15px;
 }
-
-.register__container_list--footer li a {
-    color: inherit;
-    text-decoration: none;
-}
-
 
 /* @media */
 

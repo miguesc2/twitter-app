@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import { baseUrlUser } from '../../../../services/urls'
 import HomeCenterInteractionsII from './HomeCenterInteractionsII'
 
-function HomeCenterComments({ getCommentsOnAPost }) {
+function HomeCenterComments({ getCommentsOnAPost, usernameLogin }) {
   const [ users, setUsers ] = useState([])
   let id = useParams()
   let commentsOnThePost = getCommentsOnAPost.filter(item => item.social_post === parseInt( id.postId ))
@@ -40,8 +40,10 @@ function HomeCenterComments({ getCommentsOnAPost }) {
               <div className='flexImgNameComment' key={ item.id }>
                 <Link to={ `/profile/${ item.username }` } className="linksGlobal">
                   <div className="Home__center_whatprofile-img">
-                    <img title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
-                  </div>
+                    { item.username === usernameLogin ?
+                      <img className="profileImg" title="view profile" src="https://api.lorem.space/image/face?w=200&amp;amp;amp;amp;h=200" alt="imgProfile" /> 
+                      :<img className="profileImg" title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
+                    }                  </div>
                 </Link>
 
                 <div className="Home__center_whatprofile-content">

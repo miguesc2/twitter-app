@@ -6,11 +6,7 @@ function Footer() {
   return (
     <footer className="register__container--footer mt-2">
       <ul className="register__container_list--footer">
-        { arr.map( texto => {
-          return (
-            <li key={ texto }> <small> <a href="#x"> { texto } </a> </small> </li>
-          )
-        })}
+        { arr.map( texto => <li key={ texto }> <small> { texto } </small> </li> )}
       </ul>
     </footer>
   )

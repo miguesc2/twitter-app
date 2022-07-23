@@ -7,22 +7,23 @@ function RegisterRight({ props }) {
 
   const arrayTexts = [
     "Sign in to Twitter", 
-    "Sign in with Google (not avaible)", 
-    "Sign in with Apple (not avaible)", 
+    "Sign in with Google - ( not avaible )", 
+    "Sign in with Apple - ( not avaible )", 
     <Link to="/login" id="registration__noDecoration"> <span>Login with User</span> </Link>, 
     "You do not have an account?", 
     ""
   ]
   const arrayTextsOriginals = [
     "Join Twitter today",
-    "Sign up with Google (not avaible)",
-    "Sign up with Apple (not avaible)",
+    "Sign up with Google - ( not avaible )",
+    "Sign up with Apple - ( not avaible )",
     <Link to="/signup" id="registration__noDecoration"> <span>Register as a New User</span> </Link>,
     "Do you already have an account?",
     <div className="register__main--icons register__main__icons--links">
       <small>By registering, you accept the
-        <a href="/"> Terms of Service</a> and the <a href="/"> Privacy Policy</a>, including the
-        <a href="/"> Use of Cookies</a>.
+        <span className="spanRegisterLinks"> Terms of Service</span> and the 
+        <span className="spanRegisterLinks"> Privacy Policy</span>, including the
+        <span className="spanRegisterLinks"> Use of Cookies</span>.
       </small>
     </div>
   ]

@@ -9,6 +9,9 @@
 .login__main_home--icons {
     width: 26px;
     margin-left: 20px;
+    filter: brightness(.4);
+}
+.withoutFilter {
     filter: brightness(0);
 }
 

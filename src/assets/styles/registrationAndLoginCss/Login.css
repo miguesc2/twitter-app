@@ -1,77 +1,15 @@
-.login__container {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-}
-
-.login__container_main {
-    width: 30%;
-    margin: 0 auto;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-
-.login__contain--bird {
-    margin-left: 35px;
-}
-
 .login__main--svg {
     width: 40px;
     text-align: center;
 }
 
 /* Inputs */
-
-.login__contain_texts {
-    margin-left: 35px;
-    margin-right: 35px;
-}
-
-.login__contain_texts h1 {
-    font-weight: 600;
-    font-size: 2.1em;
-}
-
-.login__contain_input {
-    margin-top: 25px;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 5px;
-    color: gray;
-}
-
-.login__contain_input:focus{
-    display: none;
-}
-
-.login__contain_input input, .login__contain_input input:focus {
-    border: none;
-    outline: none;
-    font-size: 1em;
-    width: 80%;
-    margin-left: 10px;
-    padding: 5px 0 20px 0;
-}
-
 .login__contain_ancla a {
-    color: rgb(27, 149, 224);
     text-decoration: none;
     font-size: .9em;
 }
 
 /* Button Next */
-.login__contain_nextbutton input {
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    border: none;
-    width: 100%;
-    border-radius: 50px;
-    padding: 15px 0;
-    background-color: rgba(29, 161, 242, .5);
-    margin-bottom: 30px;
-    margin-top: 15px;
-}
-
 .login__contain_ancla {
     padding-left: 30px;
     margin-bottom: 10px;

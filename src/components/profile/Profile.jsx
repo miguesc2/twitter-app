@@ -2,18 +2,23 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router';
-import { baseUrlPosts, getComments } from '../../services/urls';
+import { baseUrlPosts, baseUrlProfile, baseUrlRefreshToken, baseUrlUser, getComments } from '../../services/urls';
 import Layout from '../../containers/Layout'
 import ProfilePosts from './ProfilePosts';
 import useFormHome from '../../hooks/useFormHome';
 import '../../assets/styles/Profile.css'
 import { Link } from 'react-router-dom';
 import PageLoading from '../../containers/PageLoading';
+import { useState } from 'react';
 
-function Profile({ username }) {
+function Profile({ username, stateDelete }) {
   const { postsId } = useParams()
   const { setGetComment, setUsersArray, usersArray }  = useFormHome()
-  
+  const [ userfilter, setUserFilter ] = useState([])
+  const [ infoUser, setInfoUser ] = useState(null)
+  const [changeLettersOfFollower, setChangeLettersOfFollower] = useState(true)
+  const followUpRequest = e => setChangeLettersOfFollower(!changeLettersOfFollower)
+
   useEffect(() => {
     const url = baseUrlPosts
     const getData = () => {
@@ -23,10 +28,35 @@ function Profile({ username }) {
       getComments().then(item => setGetComment( item.data ))
     }
     getData()
-  }, [ postsId ])  // eslint-disable-line react-hooks/exhaustive-deps
+  }, [ postsId, stateDelete ]) // eslint-disable-line react-hooks/exhaustive-deps
+  
+  useEffect(() => {
+    axios.get( baseUrlUser )
+    .then(r => {
+      let res = r.data.filter(u => u.username === postsId)
+      setUserFilter(res)
+    }).catch(e => console.log(e.message))
+  }, [ postsId ])
+    
+  useEffect(() => {
+    const getToken = async() => {
+      axios.get( baseUrlRefreshToken, { params: { username: postsId } } )
+      .then(res => {
+        const response = async() => {
+          if ( userfilter.length !== 0 ) {
+            await axios.get( `${ baseUrlProfile }${ userfilter[0].id }`, { headers: { Authorization: `Token ${ res.data.token }`} })
+            .then(x => setInfoUser(x.data)).catch(e => console.log(e.message))
+          }
+        }
+        response()
+      })
+      .catch(e => console.log(e))
+    }
+    getToken()
+  }, [ userfilter ]) // eslint-disable-line react-hooks/exhaustive-deps
   
   let results = usersArray.filter( userSearch => userSearch.author === postsId )
-  
+
   return (
     <>
       <Layout>
@@ -56,7 +86,15 @@ function Profile({ username }) {
                 :<img className="profileImg" title="view profile" src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" alt="imgProfile" />
               }
               <div className="profileEdit">
-                { username === postsId ? <input type="button" value="Editar perfil" /> : <input type="button" value="Seguir" /> }
+                { username === postsId ? 
+                  <input className="editProfile" type="button" value="Edit profile" /> : 
+                  <input 
+                    className={ changeLettersOfFollower ? "FollowClass" : "FollowingClass" } 
+                    type="button" 
+                    value={ changeLettersOfFollower ? "Follow" : "Following" } 
+                    onClick={ followUpRequest } 
+                  /> 
+                }
               </div>
             </div>
           </div>
@@ -69,9 +107,9 @@ function Profile({ username }) {
             <span className="profileDescText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, fuga. Molestias, fugit!</span>
             
             <div className="profileFollowers">
-              <span>Se unió en julio de 2016</span>
+              <span>Se unió en { infoUser !== null && infoUser.date_created }</span>
               <span><strong>0</strong> siguiendo</span>
-              <span><strong>0</strong> seguidores</span>
+              <span><strong>0</strong> { infoUser !== null && infoUser.followers } seguidores</span>
             </div>
           </div>
 
@@ -82,12 +120,9 @@ function Profile({ username }) {
             <a href="#x" style={{ width: "20%" }}><span>Me gusta</span></a>
           </div>
           
-          {/* <div className="Home__center_whatprofile-content" id="vv1"> */}
-            { results.length === 0 ?
-              <PageLoading />
-              : results.map(res => <ProfilePosts res={ res } key={ res.id } usernameLogin={ username } />)
+            { results.length === 0 ? <PageLoading />
+              : results.reverse().map(res => <ProfilePosts res={ res } key={ res.id } usernameLogin={ username } />)
             }
-          {/* </div> */}
         </div>
       </Layout>
     </>
@@ -95,7 +130,10 @@ function Profile({ username }) {
 }
 
 const mapStateToProps = state => {
-  return { username: state.userLogin.data.user.username }
+  return {
+    username: state.userLogin.data.user.username,
+    stateDelete: state.stateDeletePost
+  }
 }
 
 export default connect(mapStateToProps, null)(Profile)
