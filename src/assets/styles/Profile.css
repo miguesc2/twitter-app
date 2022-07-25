@@ -47,6 +47,12 @@
     background-color: rgba(255, 0, 38, .3);
     color: rgb(255, 0, 38);
 }
+.logoutof {
+    color: rgb(255, 0, 38);
+}
+.logoutof:hover {
+    background-color: rgba(255, 0, 38, .3);
+}
 
 .divProfileHeader {
     margin-top: 7px;
@@ -71,7 +77,6 @@
 
 .divProfileBanner {
     margin-top: 10px;
-    /* background-color: red; */
     position: relative;
 }
 .profileDesc, .profileMultimedia {

@@ -1,22 +1,24 @@
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import HomeCenterTweets from './HomeCenterTweets'
-import HomeCenterSvgs from './HomeMiniC/HomeCenterSvgs'
-import PageLoading from '../../../containers/PageLoading'
+
 import { baseUrlPosts, getComments, watchPosts } from '../../../services/urls'
+import HomeCenterSvgs from './HomeMiniC/HomeCenterSvgs'
+import HomeCenterTweets from './HomeCenterTweets'
+import PageLoading from '../../../containers/PageLoading'
 import useFormHome from '../../../hooks/useFormHome'
+
 import '../../../assets/styles/mainCss/HomeCenter.css'
 
 function HomeCenter({ username, aPost }) {
-  const { setGetComment, setUsersArray, usersArray }  = useFormHome()
+  const { setGetComment, setUsersArray, usersArray } = useFormHome()
   const [ tweetValue, setTweetvalue ] = useState('')
-  const handleChange = event => { setTweetvalue( event.currentTarget.textContent ) }
+  const handleChange = event => setTweetvalue( event.currentTarget.textContent )
   
   useEffect(() => {
-    const url = baseUrlPosts
     const getData = () => {
-      axios.get(url).then( post => setUsersArray( post.data )).catch((e) => console.log(`Hubo un error: ${ e }`))
+      axios.get( baseUrlPosts )
+      .then( post => setUsersArray( post.data ))
       getComments().then(item => setGetComment( item.data ))
     }
     getData()
@@ -28,11 +30,10 @@ function HomeCenter({ username, aPost }) {
 
   const handleSubmit = async e => {
     e.preventDefault()    
-    let urlCreatePosts = baseUrlPosts
     
     if ( !tweetValue.length <= 0 ) {
       try { 
-        await axios.post( urlCreatePosts, { author: username, body: tweetValue, likes: [] } ) 
+        await axios.post( baseUrlPosts, { author: username, body: tweetValue, likes: [] } ) 
         document.getElementById('contentEditable').innerText = ''
       } catch( error ){ console.log( error.message ) }
     }
@@ -76,12 +77,15 @@ function HomeCenter({ username, aPost }) {
       </form>
       
       {
-        usersArray.length === 0 ? 
-        <PageLoading /> : usersArray.reverse().map(posts =>
-          <div key={ posts.id } className="Home__center_whatprofile Home__center_tweetsection">
-            <HomeCenterTweets { ...posts } usernameLogin={ username } />
-          </div>
-        )
+        usersArray.length === 0 
+        ? 
+          <PageLoading /> 
+        : 
+          usersArray.reverse().map( posts =>
+            <div key={ posts.id } className="Home__center_whatprofile Home__center_tweetsection">
+              <HomeCenterTweets { ...posts } usernameLogin={ username } />
+            </div>
+          )
       }
     </>
   )
@@ -91,7 +95,7 @@ const mapStateToProps = state => {
   return {
     aPost: state.userPosts,
     urlUsers: state.users,
-    username: state.userLogin.data.user.username,
+    username: state.userLogin.data.user.username
   }
 }
-export default connect(mapStateToProps, null)(HomeCenter)
+export default connect( mapStateToProps, null )( HomeCenter )

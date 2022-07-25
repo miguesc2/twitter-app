@@ -9,7 +9,6 @@ function SignUp({ twittericon }) {
       <div className="signup__container_main">
         <div className='signup__iconsTop'>
         
-          {/* X icon */}
           <div className="signup__contain--bird">
             <Link to="/" className='signup__pleft'>
                 <svg viewBox="0 0 40 40" aria-hidden="true" className="signup__main--svg" alt="registerSvg">
@@ -18,25 +17,21 @@ function SignUp({ twittericon }) {
             </Link>
           </div>
           
-          {/* twitter Icon */}
           <div className="signup__contain--bird">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="signup__main--svg" alt="registerSvg">
-              <g fill="rgba(29,161,242,1.00)"> <path d={ twittericon } /> </g>
-            </svg>
+            <Link to="/">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="signup__main--svg" alt="registerSvg">
+                <g fill="rgba(29,161,242,1.00)"> <path d={ twittericon } /> </g>
+              </svg>
+            </Link>
           </div>
         </div>
 
-          {/* form */}
-          <SignUpForm />
+        <SignUpForm />
       </div>
     </div>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    twittericon: state.images.twittericon,
-  }
-}
+const mapStateToProps = state => ({ twittericon: state.images.twittericon })
 
 export default connect( mapStateToProps, null ) ( SignUp )

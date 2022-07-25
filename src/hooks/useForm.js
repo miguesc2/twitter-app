@@ -38,18 +38,29 @@ const useForm = () => {
   }
 
   const FunctionAlert = () => { //these functions put the blue line on the border
-    setBooleann(true)
+    setBooleann( true )
     setValueClass("signup__contain_noInput")
     setValueClassPassw("signup__contain_input signup__contain_input--password")
   }
   const FunctionAlertPassw = () => {
-    setBooleann(false)
+    setBooleann( false )
     setValueClassPassw("signup__contain_noInput signup__contain_input--password")
     setValueClass("signup__contain_input")
   }
   
-  return { arrayNumbers,  arrayYears,  handleInput,  nameinput,  handleSubmit,  FunctionAlert, 
-    FunctionAlertPassw, booleann, valueClass, valueClassPassw,requestResult,months
+  return { 
+    arrayNumbers, 
+    arrayYears, 
+    handleInput, 
+    nameinput, 
+    handleSubmit, 
+    FunctionAlert, 
+    FunctionAlertPassw, 
+    booleann, 
+    valueClass, 
+    valueClassPassw, 
+    requestResult, 
+    months
   }
 }
 

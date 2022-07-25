@@ -6,7 +6,7 @@
 
 /* Search */
 .home__right_bgSearch {
-    background: rgb(239, 243, 244);
+    background: rgba(239, 243, 244, .8);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -17,6 +17,7 @@
 .homeRight_magnifyingGlass--svg, .homeRight_magnifyingGlass--X {
     width: 19px;
     margin-left: 20px;
+    padding-bottom: 2px;
 }
 
 .homeRight_bgSearchInput {
@@ -26,20 +27,17 @@
     width: 100%;
     margin-left: 1.5em;
     font-size: .9em;
-    padding-bottom: 2px;
 }
 
 .homeRight_magnifyingGlassBg {
-    /* background-color: red; */
     width: 10%;
 }
 .homeRight_InputBg {
-    /* background-color: blue; */
     width: 79%;
 }
 .homeRight_XBg {
     opacity: .2;
-    height: 11.87px;
+    height: 18px;
     width: 11%;
     text-align: center;
 }
@@ -50,7 +48,7 @@
 
 /* What's going on */
 .homeRight_Section {
-    background: rgb(239, 243, 244);
+    background: rgba(239, 243, 244, .7);
     border-radius: 15px;
     padding-bottom: 5px;
 }
@@ -58,33 +56,39 @@
 .homeRight_Section>p {
     font-size: 1.2em;
     font-weight: bold;
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 15px;
 }
-
 .homeRight_trendPh {
     font-size: .9em;
     padding: 0;
     margin: 5px 0;
     font-weight: bold;
 }
-
 .homeRight_Section_Spacing {
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 0 15px;
     transition-duration: .5s;
 }
 
 .homeRight_Section_Spacing:hover {
-    background: rgb(229, 232, 233);
+    background: rgba(229, 232, 233, .5);
     transition-duration: .5s;
 }
 
 .homeRight_trendText {
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
 
 .homeRight_trendTexts {
     color: gray;
-    font-size: .9em;
+    font-size: .8em;
     font-weight: normal;
+}
+.imgFulvo {
+    background-color: red;
+    position: absolute;
+    width: 65px;
+    border-radius: 10px;
+    right: 10px;
 }

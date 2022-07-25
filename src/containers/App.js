@@ -1,7 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Home from '../components/main/Home';
 import HomeCenterTweetsClickPost from '../components/main/HomeCenter/HomeCenterTweetsClickPost';
+import Intermediary from './Intermediary';
 import Login from '../components/registrationAndLogin/Login';
 import NotFound from './NotFound';
 import PrivateRoute from '../components/main/PrivateRoute';
@@ -14,10 +16,13 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={ RegistrationPage } />
       <Route exact path="/signup" component={ SignUp } />
-      <Route exact path="/login" component={ Login } />      
+      <Route exact path="/login" component={ Login } />
+      <Route exact path="/intermediary" component={ Intermediary } />
+      
       <PrivateRoute exact path="/home" component={ Home } />
       <PrivateRoute exact path="/homewatchpost/:postId" component={ HomeCenterTweetsClickPost } />
       <PrivateRoute exact path="/profile/:postsId" component={ Profile } />
+      
       <Route component={ NotFound } />
     </Switch>
   </BrowserRouter>

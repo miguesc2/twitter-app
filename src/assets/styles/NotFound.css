@@ -6,13 +6,11 @@
     height: 100vh;
     color: gray;
 }
-
 .notFound div {
     background-color: rgb(41, 169, 255);
     border-radius: 20px;
     padding: 10px;
 }
-
 .linkStyle {
     color: white;
     text-decoration: none;

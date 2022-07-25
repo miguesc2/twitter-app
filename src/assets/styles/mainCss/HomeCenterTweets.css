@@ -11,6 +11,7 @@
 
 .Home__center_figcapTweet figcaption {
     font-size: .9em;
+    overflow-wrap: break-word;
 }
 
 .Home__center_figcapTweet figcaption a {
@@ -89,6 +90,7 @@ figure {
 .stylePLoading {
     width: 100%;
 }
+
 /* CLICK STYLES ON A POST */
 .spanCenterPost {
     width: 47%;
@@ -100,7 +102,6 @@ figure {
     width: 100%;
     padding: 10px 20px;
 }
-
 
 .flexImgName, .flexImgNameComment {
     display: flex;
@@ -165,7 +166,6 @@ figure {
 }
 
 .listComments {
-    /* background-color: red; */
     margin: 10px 0;
     border-bottom: 1px solid var(--gray-light);
     padding-bottom: 10px;
@@ -184,4 +184,8 @@ figure {
     margin-right: 15px;
     border-radius: 50px;
     width: 50px;
+}
+.arrowBack {
+    width: 20px;
+    margin-right: 10px;
 }

@@ -35,7 +35,6 @@
 }
 
 /* PRINCIPAL SECTION */
-
 .register__container--main {
     margin: 30px 30px 0 30px;
 }
@@ -122,7 +121,6 @@
 }
 
 /* Footer */
-
 .register__container_list--footer {
     list-style: none;
     color: rgb(83, 100, 113);
@@ -135,7 +133,6 @@
 }
 
 /* @media */
-
 @media (min-width: 610px) {
     .register__container--main h1 {
         font-size: 4.2em;

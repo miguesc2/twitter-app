@@ -1,15 +1,11 @@
-import '../assets/styles/NotFound.css'
 import { Link } from "react-router-dom";
+import '../assets/styles/NotFound.css'
 
-function NotFound() {
-  return (
-    <div className="notFound">
-      <p>Page Not Found.</p>
-      <div>
-        <Link className="linkStyle" to="/">Inicio</Link>
-      </div>
-    </div>
-  )
-}
+const NotFound = () => (
+  <div className="notFound">
+    <p>Page Not Found.</p>
+    <div><Link className="linkStyle" to="/">Inicio</Link></div>
+  </div>
+)
 
 export default NotFound

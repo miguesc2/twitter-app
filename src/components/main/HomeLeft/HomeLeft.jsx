@@ -1,12 +1,16 @@
 import { connect } from 'react-redux'
-import HomeLeftSvgs from './HomeMiniL/HomeLeftSvgs'
-import HomeLeftTextos from './HomeMiniL/HomeLeftTextos'
-import '../../../assets/styles/mainCss/HomeLeft.css'
 import { Link } from 'react-router-dom'
 
-function HomeLeft({ username }) {
-  return (
-    <>
+import HomeLeftSvgs from './HomeMiniL/HomeLeftSvgs'
+import HomeLeftTextos from './HomeMiniL/HomeLeftTextos'
+import ModalCreateTweet from '../../../containers/ModalCreateTweet'
+
+import '../../../assets/styles/mainCss/HomeLeft.css'
+
+const HomeLeft = ({ username }) => (
+  <>
+    <ModalCreateTweet />
+
       {/* twitter Icon */}
       <Link to="/home">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="login__main_home--svg" alt="registerSvg">
@@ -15,30 +19,37 @@ function HomeLeft({ username }) {
           </g>
         </svg>
       </Link>
+
       {/* others Icons */}
       <div className="home__lists">
         <div className='home__lists_Flexx'>
           <HomeLeftSvgs />
           <HomeLeftTextos username={ username } />
         </div>
-        <label className="home__contain_nextbutton col-12">
-          <input type="button" value="Tweet" />
+
+        <label className="home__contain_nextbutton leftValueHide col-12">
+          <input type="button" value="Tweet" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
+        </label>
+        
+        <label className="home__contain_nextbutton leftValueHideI col-12">
+          <input type="button" value="+" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
         </label>
       </div>
 
       {/* tweet Button and profile */}
       <div className="home__profile_options">
-        <div>
+        <div className="">
           <img src="https://api.lorem.space/image/face?w=200&amp;amp;amp;amp;h=200" alt="imgProfile" />
         </div>
         
-        <div>
+        <div className="hideItem">
           <div className="home__profile_items">
             <span className="home__name">{ username }</span>
             <span className="home__username">@{ username }</span>
           </div>
         </div>
-        <div className="home__dots">
+
+        <div className="home__dots hideItem">
           <svg viewBox="0 0 30 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
             <g fill="rgba(29,161,242,1.00)">
               <circle cx="5" cy="12" r="2"></circle>
@@ -50,7 +61,7 @@ function HomeLeft({ username }) {
       </div>
     </>
   )
-}
+
 
 const mapStateToProps = state => {
   return {
@@ -58,4 +69,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null) (HomeLeft)
+export default connect( mapStateToProps, null ) ( HomeLeft )

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import useForm from '../../hooks/useForm';
 import { Redirect } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
 
 function SignUpForm() {
     const [ buttonNext, setButtonNext ] = useState("signup__contain_nextbutton")
     const { arrayNumbers, arrayYears, handleInput, nameinput, FunctionAlert, FunctionAlertPassw, booleann, valueClass, valueClassPassw, handleSubmit, requestResult, months } = useForm()
-    
+    const [ message, setMessage ] = useState('')
+
     useEffect( () => {
         function Analysis () {
             if ( nameinput.username.length >= 4 && nameinput.password.length >= 4 ) {
@@ -15,10 +16,18 @@ function SignUpForm() {
         Analysis()
     }, [ nameinput ] )
 
+    useEffect(() => {
+        if ( requestResult.length !== 0 ) {
+            requestResult === 'Bad Request' && setMessage('Existing user, try another name, or make sure the username does not contain spaces')
+        }
+    }, [ requestResult ])
+
+
     return (
         <>
             <div className="signup__contain_texts">
                 <h1>creat your account</h1>
+                <span className="alertMessage">{ message }</span>
 
                 <form className="signup__contain_form" onSubmit={ handleSubmit } id='CreateForm'>
                     <div className={ valueClass }>
@@ -35,8 +44,9 @@ function SignUpForm() {
                             className='focusss' 
                         />
                         
-                        { booleann === false ? <span className="signup__contain_span"></span>
-                        :   <span className="signup__contain_span">
+                        { booleann === false ?
+                            <span className="signup__contain_span"></span>:
+                            <span className="signup__contain_span">
                                 { nameinput === '' ? 0 : nameinput.username.length }/50
                             </span>
                         }
@@ -57,7 +67,7 @@ function SignUpForm() {
                     </div>
 
                     <div className="signup__contain_ancla">
-                        <a href="#x">Use email</a>
+                        <a href="#x" style={{ cursor: 'default' }}>Use email</a>
                     </div>
 
                     <div className="signup__contain_birthday">
@@ -96,8 +106,9 @@ function SignUpForm() {
                 </form>
             </div>
 
-            { requestResult === "Created" ? <Redirect to="/login" /> :
-                <label className={ buttonNext }> <input type="submit" value="Next" form='CreateForm' /> </label>
+            { requestResult === "Created" ? 
+                <Redirect to="/intermediary" /> :
+                <label className={ buttonNext }> <input type="submit" value="Next" form='CreateForm' /></label>
             }
         </>
     )

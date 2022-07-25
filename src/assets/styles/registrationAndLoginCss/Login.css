@@ -2,15 +2,15 @@
     width: 40px;
     text-align: center;
 }
-
-/* Inputs */
 .login__contain_ancla a {
     text-decoration: none;
     font-size: .9em;
 }
-
-/* Button Next */
 .login__contain_ancla {
     padding-left: 30px;
     margin-bottom: 10px;
+}
+.alertMessage {
+    color: rgb(255, 0, 68);
+    font-size: 1.2em;
 }

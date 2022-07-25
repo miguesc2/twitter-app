@@ -1,7 +1,6 @@
 .Home__center_header {
     display: flex;
     justify-content: space-between;
-    /* border-bottom: 1px solid var(--gray-light); */
     padding-bottom: 1px;
     padding-left: 1em;
 }
@@ -22,6 +21,7 @@
 /* whatprofile section */
 .Home__center_whatprofile {
     display: flex;
+    width: 100%;
     border-bottom: 1px solid var(--gray-light);
 }
 
@@ -87,4 +87,28 @@ input[type=file]::-webkit-file-upload-button { /* cursor pointer for chrome */
 .classColor {
     background-color: var(--blue-buttontweet-click) !important;
     opacity: 1 !important;
+}
+.Home__center_whatprofile-input {
+    padding-right: 10px;
+}
+
+@media( max-width: 653px ) {
+    .Home__center_whatprofile {
+        width: 90%;
+    }
+}
+@media( max-width: 595px ) {
+    .Home__center_whatprofile {
+        width: 87%;
+    }
+}
+@media( max-width: 520px ) {
+    .Home__center_whatprofile {
+        width: 85%;
+    }
+}
+@media( max-width: 495px ) {
+    .Home__center_whatprofile {
+        width: 85%;
+    }
 }
