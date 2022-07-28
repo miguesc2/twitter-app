@@ -10,6 +10,7 @@ function ExploreRight() {
         { text: "Do we agree that we all read comics?", img: "https://cdn.pixabay.com/photo/2017/10/16/08/53/cat-2856531__340.jpg", hashtag: <strong>#comics</strong>, img1: "https://cdn.pixabay.com/photo/2018/03/18/11/55/cartoon-3236539__340.jpg", img2: "https://cdn.pixabay.com/photo/2013/07/12/15/24/wrestler-149840__340.png" },
         { text: "What is this trend?", img: "https://cdn.pixabay.com/photo/2014/12/20/19/53/decollete-574354__340.jpg", hashtag: <strong>#onlyFans</strong>, img1: "https://cdn.pixabay.com/photo/2016/10/13/00/03/girl-1736419__340.jpg", img2: "https://cdn.pixabay.com/photo/2014/01/30/01/36/girl-254708__480.jpg" }
     ]
+    const func = () => {}
 
   return (
     <Layout>
@@ -25,7 +26,7 @@ function ExploreRight() {
             </div>
         
             <div className="homeRight_InputBg">
-              <input type="text" className="homeRight_bgSearchInput seeker" placeholder="Search(no functionality)" value={ arr[ postsId.postsId ].hashtag.props.children } />
+              <input type="text" className="homeRight_bgSearchInput seeker" placeholder="Search(no functionality)" value={ arr[ postsId.postsId ].hashtag.props.children } onChange={ func } />
             </div>
             
             <div className="homeRight_XBg">

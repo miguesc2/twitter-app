@@ -38,10 +38,11 @@ const HomeLeft = ({ username }) => (
 
       {/* tweet Button and profile */}
       <div className="home__profile_options">
-        <div className="">
-          <img src="https://api.lorem.space/image/face?w=200&amp;amp;amp;amp;h=200" alt="imgProfile" />
-        </div>
-        
+        <Link to={`/profile/${ username }`}>
+          <div>
+            <img src="https://api.lorem.space/image/face?w=200&amp;amp;amp;amp;h=200" alt="imgProfile" />
+          </div>
+        </Link>
         <div className="hideItem">
           <div className="home__profile_items">
             <span className="home__name">{ username }</span>

@@ -14,7 +14,7 @@ function Saved({ username }) {
           </div>
           
           <div className="centralContentSaved">
-            <img src="https://abs.twimg.com/sticky/illustrations/empty-states/book-in-bird-cage-400x200.v1.png" alt="" />
+            <img src="https://abs.twimg.com/sticky/illustrations/empty-states/book-in-bird-cage-400x200.v1.png" alt="imageNotFound" />
             <p>There are no saved tweets</p>         
           </div>
         </div>

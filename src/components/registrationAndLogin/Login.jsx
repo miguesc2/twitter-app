@@ -38,7 +38,7 @@ function LoginPage(props) {
   return (
     <div className="signup__container">
       <div className="signup__container_main">
-        <img src={ props.twittericon } alt="" />
+        <img src={ props.twittericon } alt="imageNotFound" />
       
         <div className='signup__iconsTop'>
           <div className="signup__contain--bird">

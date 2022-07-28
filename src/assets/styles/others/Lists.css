@@ -1,13 +1,64 @@
 .pinnedLists {
-    margin: 15px;
+    border-bottom: 1px solid var(--gray-light);
+    padding: 15px;
 }
 .pinnedLists img {
     width: 60px;
+    height: 60px;
+    object-fit: cover;
     border-radius: 10px;
 }
-.pinnedLists h5 {
+.pinnedLists d {
     font-weight: bold;
 }
 .pinnedListsContent {
     margin-top: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.pinnedListsFlex {
+    display: flex;
+}
+.pinnedListsFollow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.pinnedListsFollow input {
+    background-color: black;
+    color: white;
+    border: none;
+}
+.pinnedListsFollow input:hover {
+    border: none;
+}
+.pinnedListsFollow img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.pinnedListsFollowNames {
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+}
+.pinnedListsFollowNames p {
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
+}
+.DiscoverLists {
+    padding: 15px;
+}
+.DiscoverLists h5 {
+    font-weight: bold;
+}
+.itemPinned {
+    color: gray;
+    font-size: .8em;
+    margin-left: 4px;
 }
