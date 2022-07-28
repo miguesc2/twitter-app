@@ -30,16 +30,15 @@
 }
 
 .homeRight_magnifyingGlassBg {
-    width: 10%;
+    width: 6%;
 }
 .homeRight_InputBg {
-    width: 79%;
+    width: 88%;
 }
 .homeRight_XBg {
     opacity: .2;
     height: 18px;
-    width: 11%;
-    text-align: center;
+    width: 6%;
 }
 .homeRight_magnifyingGlass--X {
     margin: 0px;
@@ -91,4 +90,8 @@
     width: 65px;
     border-radius: 10px;
     right: 10px;
+}
+.homeRight_Section a {
+    color: black;
+    text-decoration: none;
 }

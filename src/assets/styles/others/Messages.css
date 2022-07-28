@@ -1,0 +1,53 @@
+.messages_whatprofile {
+    border: none;
+    background-color: rgba(239, 243, 244, .8);
+    margin-top: 12px;
+}
+.messages_whatprofileI {
+    border: none;
+    margin-top: 12px;
+}
+.container_right_message {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.write_a_message {
+    border-top: 1px solid var(--gray-light);
+    padding-top: 7px;
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+.write_a_message svg {
+    width: 20px;
+}
+.write_a_message input {
+    width: 77%;
+    border: 1px solid rgb(202, 202, 202);
+    padding: 4px 10px;
+    border-radius: 15px;
+    outline: none;
+}
+.write_a_message input:focus {
+    border: 2px solid var(--blue-buttontweet-click);
+}
+.write_a_message input::placeholder {
+    font-size: .9em;
+}
+.hidden_chat {
+    display: none;
+}
+#parent_div {
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+}
+#parent_div span {
+    margin-bottom: 10px;
+    display: block;
+}

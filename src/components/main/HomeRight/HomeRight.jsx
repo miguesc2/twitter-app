@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../../../assets/styles/mainCss/HomeRight.css'
 
 const HomeRight = () => (
@@ -28,66 +29,74 @@ const HomeRight = () => (
       <div className="homeRight_Section mt-4">
         <p className="">What's going on</p>
 
-        <div className="homeRight_Section_Spacing">
-          <div className="homeRight_trendText">
-            <span className="homeRight_trendTexts">Trend in Colombia</span>
-            <img className="imgFulvo" src="https://i.pinimg.com/originals/98/11/02/981102ebb06a742daf1da03e6d485dfe.jpg" alt="futbolExpert" />
+        <Link to="/explore/0">
+          <div className="homeRight_Section_Spacing">
+              <div className="homeRight_trendText">
+                <span className="homeRight_trendTexts">Trend in Colombia</span>
+                <img className="imgFulvo" src="https://i.pinimg.com/originals/98/11/02/981102ebb06a742daf1da03e6d485dfe.jpg" alt="futbolExpert" />
+              </div>
+
+            <p className="homeRight_trendPh">#UnFulvo</p>
+            <p className="homeRight_trendPh homeRight_trendTexts">309 mil Tweets</p>
           </div>
+        </Link>
 
-          <p className="homeRight_trendPh">#UnFulvo</p>
-          <p className="homeRight_trendPh homeRight_trendTexts">309 mil Tweets</p>
-        </div>
+        <Link to="/explore/1">
+          <div className="homeRight_Section_Spacing">
+            <div className="homeRight_trendText">
+              <span className="homeRight_trendTexts">Trend in EEUU</span>
 
-        <div className="homeRight_Section_Spacing">
-          <div className="homeRight_trendText">
-            <span className="homeRight_trendTexts">Trend in EEUU</span>
+              <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
+                <g fill="rgba(29,161,242,1.00)">
+                  <circle cx="5" cy="12" r="2"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                </g>
+              </svg>
+            </div>
 
-            <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
-              <g fill="rgba(29,161,242,1.00)">
-                <circle cx="5" cy="12" r="2"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-                <circle cx="19" cy="12" r="2"></circle>
-              </g>
-            </svg>
+            <p className="homeRight_trendPh">This project secures me a job</p>
+            <p className="homeRight_trendPh homeRight_trendTexts">28.5 mil Tweets</p>
           </div>
+        </Link>
 
-          <p className="homeRight_trendPh">This project secures me a job</p>
-          <p className="homeRight_trendPh homeRight_trendTexts">28.5 mil Tweets</p>
-        </div>
+        <Link to="/explore/2">
+          <div className="homeRight_Section_Spacing">
+            <div className="homeRight_trendText">
+              <span className="homeRight_trendTexts">Trend in EEUU</span>
 
-        <div className="homeRight_Section_Spacing">
-          <div className="homeRight_trendText">
-            <span className="homeRight_trendTexts">Trend in EEUU</span>
+              <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
+                <g fill="rgba(29,161,242,1.00)">
+                  <circle cx="5" cy="12" r="2"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                </g>
+              </svg>
+            </div>
 
-            <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
-              <g fill="rgba(29,161,242,1.00)">
-                <circle cx="5" cy="12" r="2"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-                <circle cx="19" cy="12" r="2"></circle>
-              </g>
-            </svg>
+            <p className="homeRight_trendPh">someone's comics</p>
+            <p className="homeRight_trendPh homeRight_trendTexts">13 mil Tweets</p>
           </div>
+        </Link>
 
-          <p className="homeRight_trendPh">someone's comics</p>
-          <p className="homeRight_trendPh homeRight_trendTexts">13 mil Tweets</p>
-        </div>
+        <Link to="/explore/3">
+          <div className="homeRight_Section_Spacing">
+            <div className="homeRight_trendText">
+              <span className="homeRight_trendTexts">Trend in EEUU</span>
+              
+              <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
+                <g fill="rgba(29,161,242,1.00)">
+                  <circle cx="5" cy="12" r="2"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                </g>
+              </svg>
+            </div>
 
-        <div className="homeRight_Section_Spacing">
-          <div className="homeRight_trendText">
-            <span className="homeRight_trendTexts">Trend in EEUU</span>
-            
-            <svg viewBox="0 0 35 24" aria-hidden="true" className="login__main_home--icons" alt="registerSvg">
-              <g fill="rgba(29,161,242,1.00)">
-                <circle cx="5" cy="12" r="2"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-                <circle cx="19" cy="12" r="2"></circle>
-              </g>
-            </svg>
+            <p className="homeRight_trendPh">#only_fans?</p>
+            <p className="homeRight_trendPh homeRight_trendTexts">458 Tweets</p>
           </div>
-
-          <p className="homeRight_trendPh">#only_fans?</p>
-          <p className="homeRight_trendPh homeRight_trendTexts">458 Tweets</p>
-        </div>
+        </Link>
       </div>
     </div>
   </>

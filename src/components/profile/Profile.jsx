@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Layout from '../../containers/Layout'
 import ModalDeleteProfile from '../../containers/ModalDeleteProfile';
-import PageLoading from '../../containers/PageLoading';
 import ProfilePosts from './ProfilePosts';
 import useFormHome from '../../hooks/useFormHome';
 
@@ -151,16 +150,13 @@ function Profile({ username, stateDelete }) {
           </div>
 
           <div className="profileMultimedia">
-            <a href="#x" style={{ width: "20%" }} className="onlySection"><span>Tweets</span></a>
-            <a href="#x" style={{ width: "35%" }}><span>Tweets y respuestas</span></a>
-            <a href="#x" style={{ width: "25%" }}><span>Fotos y videos</span></a>
-            <a href="#x" style={{ width: "20%" }}><span>Me gusta</span></a>
+            <span className="onlySection" style={{ width: "20%" }}>Tweets</span>
+            <span style={{ width: "35%" }}>Tweets and replies</span>
+            <span style={{ width: "25%" }}>Photos and videos</span>
+            <span style={{ width: "20%" }}>I like it</span>
           </div>
           
-          { results.length === 0 
-            ? <PageLoading />
-            : results.reverse().map( res => <ProfilePosts res={ res } key={ res.id } usernameLogin={ username } /> )
-          }
+          { results.reverse().map( res => <ProfilePosts res={ res } key={ res.id } usernameLogin={ username } /> ) }
         </div>
       </Layout>
     </>

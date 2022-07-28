@@ -1,0 +1,30 @@
+.notificationItems {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 10px 30px;
+    border-bottom: 1px solid var(--gray-light);
+}
+.notificationItemsI img {
+    width: 40px;
+}
+.notificationItemsI {
+    display: flex;
+    padding: 10px 15px 10px 25px;
+    border-bottom: 1px solid var(--gray-light);
+    align-items: flex-start;
+}
+.login__notification--icons {
+    width: 45px;
+}
+.login__explore_dot {
+    width: 30px;
+    filter: brightness(.5);
+}
+.notificationItems p {
+    margin: 0;
+    padding: 0;
+}
+.h1_notifications {
+    margin: 15px 15px 25px 15px;
+    font-weight: bold;
+}

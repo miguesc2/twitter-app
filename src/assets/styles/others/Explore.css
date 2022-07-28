@@ -1,0 +1,80 @@
+.exploreSearch {
+    background: rgba(239, 243, 244, .8);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+    margin: 5px 20px 0 20px;
+}
+.divProfile .seeker {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 0;
+    background-color: rgba(255, 255, 255, 0);
+    right: 0;
+    font-size: 1em;
+}
+.divProfile .seeker:hover {
+    border: none;
+}
+.profileMultimediaExplorer {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--gray-light);
+}
+.profileMultimediaExplorer span {
+    font-weight: 500;
+    color: rgb(100, 122, 148);
+    text-decoration: none;
+    text-align: center;
+    font-size: .9em;
+    padding: 10px;
+}
+.profileMultimediaExplorer .onlySection {
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--blue-buttontweet-click);
+}
+.profileMultimediaExplorer a:span {
+    background-color: rgba(7, 7, 7, .1);
+    cursor: auto;
+}
+.trendsIn {
+    margin: 15px 15px;
+}
+.trendsIn p {
+    font-weight: bold;
+    margin: 0;
+}
+.trendsIn span {
+    color: gray;
+    font-size: .8em;
+}
+.trendsFlex {
+    margin: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.trendsFlex p {
+    font-weight: bold;
+    margin: 0;
+}
+.trendsFlex span {
+    color: gray;
+    font-size: .8em;
+}
+.trendsFlex img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.h1_others {
+    margin: 20px 15px 5px 15px;
+    font-weight: bold;
+    padding-top: 15px;
+    border-top: 1px solid var(--gray-light);
+}
+.Home__explore_tweetsection {
+    padding-top: 5px;
+}

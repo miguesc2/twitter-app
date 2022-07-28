@@ -1,0 +1,24 @@
+.divSavedHeader {
+    margin: 10px 15px;
+}
+.divSavedHeader h5 {
+    margin: 0;
+    font-weight: bold;
+}
+.divSavedHeader small {
+    color: gray;
+}
+.centralContentSaved {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.centralContentSaved img {
+    width: 350px;
+}
+.centralContentSaved p {
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 2vh;
+}

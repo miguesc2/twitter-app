@@ -1,0 +1,13 @@
+.pinnedLists {
+    margin: 15px;
+}
+.pinnedLists img {
+    width: 60px;
+    border-radius: 10px;
+}
+.pinnedLists h5 {
+    font-weight: bold;
+}
+.pinnedListsContent {
+    margin-top: 20px;
+}
